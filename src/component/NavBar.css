@@ -1,6 +1,36 @@
-.navbar{
-    border-bottom: 1px solid black;
-    padding: 8px;
+.navbar {
+  border-bottom: 1px solid var(--primary-c);
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+
+  & ul {
     display: flex;
-    align-items: center;
+   align-items: center;
+    gap: 1.7rem;
+  }
+  .search-form {
+    display: flex;
+    gap: 0.2rem;
+    .search_input {
+      width: clamp(14rem, 20vw, 26rem);
+      height: 2.5rem;
+      padding: 0.5rem;
+      font-size: 1.2rem;
+      border: 2px solid var(--primary-c);
+      border-radius: 0.2rem;
+    }
+    .search-button {
+      height: 2.5rem;
+      background-color: var(--primary-c);
+      border: none;
+      border-radius: 0.2rem;
+      padding: 0.2rem;
+    }
+  }
 }

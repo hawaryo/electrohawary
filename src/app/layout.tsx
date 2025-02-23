@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
-import "./globals.css";
+import "../styles/variables.css";
+import "../styles/globals.css";
 import NavBar from "../component/NavBar";
+
+
 export const metadata: Metadata = {
   title: "الكترو الهواري",
-  description: "تسوق الان منتجات الكترونية إضاءة ليد خلايا طاقة شميسة و بطاريات",
+  description:
+    "تسوق الان منتجات الكترونية، إضاءة ليد، خلايا طاقة شميسة و بطاريات",
 };
 
 const rubikFont = Rubik({
