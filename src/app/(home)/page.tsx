@@ -1,4 +1,4 @@
-import styles from "./page.module.css";
+/* import styles from "./page.module.css"; */
 import { createClient } from "../../../utils/supabase/server";
 export default async function Instruments() {
   const supabase = await createClient();
@@ -6,11 +6,11 @@ export default async function Instruments() {
 
   return (
     <div>
-{/*        {category?.map((a) => (
+      {category?.map((a) => (
         <div key={a.id}>
           <img src={a.image.link} alt={a.image.alt} width={500} height={500}/>
         </div>
-      ))} */}
+      ))} 
     </div>
   );
 }
