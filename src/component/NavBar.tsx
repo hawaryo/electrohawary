@@ -5,7 +5,7 @@ export default function NavBar() {
     <nav className="navbar">
       <label htmlFor="burger-toggle" className="toggle-icon"> |||
       </label>
-      <input type="checkbox" className="checkbox" id="burger-toggle" />
+      <input type="checkbox" className="checkbox" id="burger-toggle"/>
       <svg
         className="navbar-logo"
         xmlns="http://www.w3.org/2000/svg"

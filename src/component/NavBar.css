@@ -42,7 +42,6 @@
 }
 /*small screens*/
 @media screen and (max-width: 60rem) {
-
   .navbar {
     gap: 0.3rem;
     .toggle-icon {
@@ -54,7 +53,23 @@
     }
     .checkbox {
       &:checked ~ ul {
-        display: none;
+        display: flex;
+        opacity: 1;
+        font-size: 2rem;
+        flex-direction: column;
+        position: absolute;
+        top: 6rem;
+        background-color: var(--background-dark-c);
+        border-block-start: 2px solid black;
+        padding: 2rem;
+        gap: 3rem;
+        width: 100vw;
+        height: 100vh;
+        transition: all 200ms ease;
+        @starting-style {
+          opacity: 0;
+          height: 0;
+        }
       }
     }
     .navbar-logo {
@@ -64,22 +79,7 @@
       order: 3;
     }
     & ul {
-      opacity: 1;
-      font-size: 1.7rem;
-      flex-direction: column;
-      position: absolute;
-      top: 6rem;
-      background-color: var(--background-dark-c);
-      border-block-start: 2px solid black;
-      padding: 2rem;
-      gap: 3rem;
-      width: 100vw;
-      height: 100vh;
-      transition: all 200ms ease;
-      @starting-style {
-        opacity: 0;
-        height: 0;
-      }
+      display: none;
     }
     .cart {
       order: 2;
