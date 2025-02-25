@@ -3,9 +3,8 @@ import Link from "next/link";
 export default function NavBar() {
   return (
     <nav className="navbar">
-      <label htmlFor="burger-toggle" className="toggle-icon"> |||
-      </label>
-      <input type="checkbox" className="checkbox" id="burger-toggle"/>
+      <input type="checkbox" className="checkbox" id="burger-toggle" />
+      <label htmlFor="burger-toggle" className="toggle-icon"></label>
       <svg
         className="navbar-logo"
         xmlns="http://www.w3.org/2000/svg"

@@ -10,7 +10,6 @@
   gap: 5rem;
   .toggle-icon {
     display: none;
-    transform: rotate(90deg);
   }
   .checkbox {
     display: none;
@@ -43,32 +42,40 @@
 /*small screens*/
 @media screen and (max-width: 60rem) {
   .navbar {
-    gap: 0.3rem;
+    gap: 0.5rem;
     .toggle-icon {
       display: inline;
-      transform: rotate(90deg);
-      margin-inline-end: 10px;
-      font-size: 2rem;
-      letter-spacing: 0.2rem;
+      &::after {
+        content: url("/images/menu-burger-icon.svg");
+        display: inline-block;
+       
+      }
     }
     .checkbox {
-      &:checked ~ ul {
-        display: flex;
-        opacity: 1;
-        font-size: 2rem;
-        flex-direction: column;
-        position: absolute;
-        top: 6rem;
-        background-color: var(--background-dark-c);
-        border-block-start: 2px solid black;
-        padding: 2rem;
-        gap: 3rem;
-        width: 100vw;
-        height: 100vh;
-        transition: all 200ms ease;
-        @starting-style {
-          opacity: 0;
-          height: 0;
+      &:checked {
+        ~ ul {
+          display: flex;
+          opacity: 1;
+          font-size: 2rem;
+          flex-direction: column;
+          position: absolute;
+          top: 6rem;
+          background-color: var(--background-dark-c);
+          border-block-start: 2px solid black;
+          padding: 2rem;
+          gap: 3rem;
+          width: 100vw;
+          height: 100vh;
+          transition: all 200ms ease;
+          @starting-style {
+            opacity: 0;
+            height: 0;
+          }
+        }
+        ~ label.toggle-icon {
+          &::after {
+            content: url("/images/x-icon.svg");
+          }
         }
       }
     }
