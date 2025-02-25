@@ -1,3 +1,4 @@
+export const runtime = "edge";
 /* import styles from "./page.module.css"; */
 import { createClient } from "../../../utils/supabase/server";
 export default async function Instruments() {
@@ -8,9 +9,9 @@ export default async function Instruments() {
     <div>
       {category?.map((a) => (
         <div key={a.id}>
-          <img src={a.image.link} alt={a.image.alt} width={500} height={500}/>
+          <img src={a.image.link} alt={a.image.alt} width={500} height={500} />
         </div>
-      ))} 
+      ))}
     </div>
   );
 }
