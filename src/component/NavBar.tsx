@@ -4,7 +4,7 @@ export default function NavBar() {
   return (
     <nav className="navbar">
       <input type="checkbox" className="checkbox" id="burger-toggle" />
-      <label htmlFor="burger-toggle" className="toggle-icon"></label>
+      <label htmlFor="burger-toggle" className="toggle-icon">a</label>
       <svg
         className="navbar-logo"
         xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@ export default function NavBar() {
             placeholder="ابحث"
             aria-label="search"
           />
-          <button aria-label="search button" className="search-button">
+          <button aria-label="search" className="search-button">
             <svg
               width="35"
               height="34"
