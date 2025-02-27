@@ -48,7 +48,6 @@
       &::after {
         content: url("/images/menu-burger-icon.svg");
         display: inline-block;
-       
       }
     }
     .checkbox {
@@ -90,6 +89,9 @@
     }
     .cart {
       order: 2;
+      @media screen and (min-width: 38.75rem) {
+        order: 4;
+      }
     }
   }
 }
