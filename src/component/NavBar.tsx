@@ -2,10 +2,9 @@ import "./NavBar.css";
 import Link from "next/link";
 export default function NavBar() {
   return (
-    <nav className="navbar">
+    <nav className="navbar" role="navigation">
       <input type="checkbox" className="checkbox" id="burger-toggle" />
-      <label htmlFor="burger-toggle" className="toggle-icon">
-      </label>
+      <label htmlFor="burger-toggle" className="toggle-icon"></label>
       <svg
         className="navbar-logo"
         xmlns="http://www.w3.org/2000/svg"
@@ -31,14 +30,14 @@ export default function NavBar() {
         />
       </svg>
       <search>
-        <form action="" className="search-form">
+        <form role="search" action="" className="search-form">
           <input
             type="text"
             className="search_input"
             placeholder="ابحث"
             aria-label="search"
           />
-          <button aria-label="search" className="search-button">
+          <button aria-label="Search button" className="search-button">
             <svg
               width="35"
               height="34"
