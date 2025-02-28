@@ -1,48 +1,15 @@
 .home-page-intro {
+  max-width: 750px;
+  font-size: 1rem;
   text-align: center;
   padding-block: 4rem;
-  font-size: 1rem;
-  max-width: 800px;
+  padding-inline: 4vw;
   margin-inline: auto;
+  margin-block-start: 2rem;
   & h1 {
     margin-block-end: 1rem;
   }
   @media screen and (min-width: 56rem) {
     padding: 3rem;
   }
-}
-
-.category-section {
-  padding: 4vw;
-  & h2 {
-    margin-block-end: 1rem;
-  }
-}
-.image-container {
-  border: 2px solid var(--primary-c);
-  border-radius: 3px;
-  padding: 1rem;
-  & img {
-    width: 100%;
-    height: 100%;
-  }
-}
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
-  gap: 1rem;
-
-  @media screen and (min-width: 50rem) {
-    grid-template-columns: repeat(5, minmax(7rem, 220px));
-    justify-content: center;
-  }
-}
-
-.category-name {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  gap: 1rem;
-  font-size: clamp(1.2rem, 2vw, 1.8rem);
-  margin-block-start: 0.4rem;
 }
