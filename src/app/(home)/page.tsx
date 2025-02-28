@@ -1,5 +1,3 @@
-export const runtime = "edge";
-export const dynamicParams = false;
 import "./page.css";
 import { createClient } from "../../../utils/supabase/server";
 export default async function Instruments() {
