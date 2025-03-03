@@ -6,6 +6,11 @@ import NavBar from "../component/NavBar";
 
 
 export const metadata: Metadata = {
+  icons:{
+    icon:[
+      {url: '/favicon.svg', type: 'image/svg+xml'},
+    ]
+  },
   title: "الكترو الهواري",
   description:
     "تسوق الان منتجات الكترونية، إضاءة ليد، خلايا طاقة شميسة و بطاريات",

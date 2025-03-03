@@ -1,5 +1,6 @@
 export const runtime = "edge";
 import "./CategorySection.css";
+import Image from "next/image";
 import { createClient } from "../../utils/supabase/server";
 
 export default async function Instruments() {

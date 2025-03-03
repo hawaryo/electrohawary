@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import CategorySection from "../../component/CategorySection";
 import "./page.css";
 export default function Instruments() {
@@ -10,7 +11,9 @@ export default function Instruments() {
           الشمسية والبطاريات والمكونات الإليكترونية وأجهزه القياس
         </p>
       </div>
-      <CategorySection />
+      <Suspense fallback={<div>loading....</div>}>
+        <CategorySection />
+      </Suspense>
     </main>
   );
 }
