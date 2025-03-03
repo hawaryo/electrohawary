@@ -5,7 +5,9 @@ type props = {
     categoryname: string;
   };
 };
-export default function CategoryProducts({ params }: props) {
-  console.log(params.categoryname);
-  return <div lang="ar">{params.categoryname}</div>;
+export default async function CategoryProducts({params}: props) {
+  const param = await params;
+
+  console.log(param.categoryname);
+  return <div lang="ar">{param.categoryname}</div>;
 }

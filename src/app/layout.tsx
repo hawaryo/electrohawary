@@ -1,15 +1,12 @@
-import type { Metadata } from "next";
-import { Rubik } from "next/font/google";
+import type {Metadata} from "next";
+import {Rubik} from "next/font/google";
 import "../styles/variables.css";
 import "../styles/globals.css";
 import NavBar from "../component/NavBar";
 
-
 export const metadata: Metadata = {
-  icons:{
-    icon:[
-      {url: '/favicon.svg', type: 'image/svg+xml'},
-    ]
+  icons: {
+    icon: [{url: "/favicon.svg", type: "image/svg+xml"}],
   },
   title: "الكترو الهواري",
   description:

@@ -1,20 +1,20 @@
-export const runtime = "edge";
+"use cache";
 import "./CategorySection.css";
 import Image from "next/image";
-import { createClient } from "../../utils/supabase/server";
+import {createClient} from "../../utils/supabase/client";
 
 export default async function Instruments() {
   const supabase = await createClient();
-  const { data: category } = await supabase.from("category").select();
+  const {data: category} = await supabase.from("category").select();
 
   return (
     <section className="category-section">
       <h2>تفقد الأقسام</h2>
       <div className="category-grid">
-        {category?.map((a) => (
+        {category?.map(a => (
           <a key={a.id} href={`/${a.name}`}>
             <div className="image-container">
-              <img src={a.image_url} alt={a.alt} width={172} height={180} />
+              <Image src={a.image_url} alt={a.alt} width={172} height={180} />
             </div>
             <div className="category-name">
               <h3>{a.name}</h3>
