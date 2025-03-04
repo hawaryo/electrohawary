@@ -2,6 +2,7 @@
 import "./CategorySection.css";
 import Image from "next/image";
 import {createClient} from "../../utils/supabase/client";
+import Link from "next/link";
 
 export default async function Instruments() {
   const supabase = await createClient();
@@ -12,9 +13,9 @@ export default async function Instruments() {
       <h2>تفقد الأقسام</h2>
       <div className="category-grid">
         {category?.map(a => (
-          <a key={a.id} href={`/${a.name}`}>
+          <Link key={a.id} href={`/${a.name}`}>
             <div className="image-container">
-              <Image src={a.image_url} alt={a.alt} width={172} height={180} />
+              <Image src={a.image_url} alt={a.alt} width={500} height={500} />
             </div>
             <div className="category-name">
               <h3>{a.name}</h3>
@@ -30,7 +31,7 @@ export default async function Instruments() {
                 />
               </svg>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
     </section>
