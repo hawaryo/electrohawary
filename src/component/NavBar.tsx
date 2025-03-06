@@ -10,7 +10,7 @@ export default function NavBar() {
         aria-label="toggle menu"
         tabIndex={0}
       ></label>
-      <a href="/">
+      <Link href="/">
         <svg
           className="navbar-logo"
           xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,7 @@ export default function NavBar() {
             d="M205.627 54.674V29.148h5.397V39.68h10.956V29.148h5.384v25.526h-5.384V44.129h-10.956v10.545z"
           />
         </svg>
-      </a>
+      </Link>
       <search>
         <form role="search" action="" className="search-form">
           <input
