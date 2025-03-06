@@ -13,7 +13,7 @@ export default async function Instruments() {
       <h2>تفقد الأقسام</h2>
       <div className="category-grid">
         {category?.map(a => (
-          <Link key={a.id} href={`/${a.name}`}>
+          <Link key={a.id} href={`/category/${a.name}`}>
             <div className="image-container">
               <Image src={a.image_url} alt={a.alt} width={500} height={500} />
             </div>
