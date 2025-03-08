@@ -35,21 +35,23 @@ export default async function CategoryProducts({params}: props) {
     .returns<product[]>();
 
   return (
-    <section>
+    <>
       <h1 className="categoty-section-heading">{`منتجات قسم ال${CategoryName}`}</h1>
-      <div className="products_grid">
-        {product?.map(n => (
-          <Link href={`/product/${n.title}`} key={n.id}>
-            <Image
-              src={n.product_image.url}
-              alt={n.product_image.alt}
-              width={300}
-              height={300}
-            />
-            <h2>{n.title}</h2>
-          </Link>
-        ))}
-      </div>
-    </section>
+      <section>
+        <div className="products_grid">
+          {product?.map(n => (
+            <Link href={`/product/${n.title}`} key={n.id}>
+              <Image
+                src={n.product_image.url}
+                alt={n.product_image.alt}
+                width={300}
+                height={300}
+              />
+              <h2>{n.title}</h2>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }
