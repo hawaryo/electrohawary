@@ -1,31 +1,55 @@
 import "./page.css";
 import {createClient} from "../../../../../utils/supabase/client";
-
+import Image from "next/image";
+import Link from "next/link";
+//types
 type props = {
   params: {
     name: string;
   };
 };
+
+type product = {
+  id: number;
+  title: string;
+  product_image: {
+    url: string;
+    alt: string;
+  };
+};
 export default async function CategoryProducts({params}: props) {
   const param = await params;
   const supabase = await createClient();
+  const CategoryName = decodeURIComponent(param.name);
   //get category ID
   const {data: categoryId} = await supabase
     .from("category")
-    .select(`id`)
-    .eq("name", decodeURIComponent(param.name))
+    .select("id")
+    .eq("name", CategoryName)
     .single();
   //get products from the specified category ID
   const {data: product} = await supabase
     .from("product")
-    .select(`title, product_image(url, alt)`)
-    .eq("category_id", categoryId?.id); //param.name
+    .select("id, title, product_image(url, alt)")
+    .eq("category_id", categoryId?.id)
+    .returns<product[]>();
 
   return (
-    <div>
-      <div>{`منتجات قسم ال${decodeURIComponent(param.name)}`}</div>
-      <pre>{JSON.stringify(product, null, 2)}</pre>
-     
-    </div>
+    <section>
+      <h1 className="categoty-section-heading">{`منتجات قسم ال${CategoryName}`}</h1>
+      <div className="products_grid">
+        {product?.map(n => (
+          <Link href={`/product/${n.title}`} key={n.id}>
+            <Image
+              src={n.product_image.url}
+              alt={n.product_image.alt}
+              width={300}
+              height={300}
+            />
+            <h2>{n.title}</h2>
+          </Link>
+        ))}
+      </div>
+    </section>
   );
 }
