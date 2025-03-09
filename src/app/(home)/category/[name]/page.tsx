@@ -28,7 +28,7 @@ export default async function CategoryProducts({params}: props) {
     .eq("name", CategoryName)
     .single();
   //get products from the specified category ID
-  const {data: product} = await supabase
+  const {data: products} = await supabase
     .from("product")
     .select("id, title, product_image(url, alt)")
     .eq("category_id", categoryId?.id)
@@ -39,7 +39,7 @@ export default async function CategoryProducts({params}: props) {
       <h1 className="categoty-section-heading">{`منتجات قسم ال${CategoryName}`}</h1>
       <section>
         <div className="products_grid">
-          {product?.map(n => (
+          {products?.map(n => (
             <Link href={`/product/${n.title}`} key={n.id}>
               <Image
                 src={n.product_image.url}
