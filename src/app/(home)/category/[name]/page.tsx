@@ -4,9 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 //types
 type props = {
-  params: {
+  params: Promise<{
     name: string;
-  };
+  }>;
 };
 
 type product = {
