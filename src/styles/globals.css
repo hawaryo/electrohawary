@@ -37,8 +37,8 @@ a {
 body {
   background-color: #f5f1ea;
 }
-/*becuse  safrai will not treat lists that have list style non as non*/
-[role="list"]{
+
+ul{
   list-style: none;
 }
 /* @media (prefers-color-scheme: dark) {

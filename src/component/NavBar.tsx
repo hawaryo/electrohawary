@@ -1,16 +1,52 @@
+"use client";
+import {useState} from "react";
 import "./NavBar.css";
 import Link from "next/link";
 export default function NavBar() {
+  const [clicked, setClicked] = useState(false);
+
+  function handleClicked() {
+    setClicked(!clicked);
+  }
+
   return (
     <nav className="navbar" role="navigation">
-      <input type="checkbox" className="checkbox" id="burger-toggle" />
-      <label
-        htmlFor="burger-toggle"
-        className="toggle-icon"
-        aria-label="toggle menu"
-        tabIndex={0}
-      ></label>
-      <Link href="/">
+      <button
+        className="menu-toggle-button"
+        aria-label="اظهار القائمة"
+        aria-controls="navbar-links"
+        aria-expanded={clicked ? "true" : "false"}
+        onClick={handleClicked}
+      >
+        {clicked ? (
+          <svg
+            width="35"
+            height="30"
+            viewBox="0 0 30 30"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.2642 13.7344L27.129 3.87019C27.2123 3.787 27.2783 3.68822 27.3234 3.57949C27.3685 3.47076 27.3917 3.35422 27.3917 3.23653C27.3917 3.11883 27.3685 3.00229 27.3234 2.89356C27.2783 2.78483 27.2123 2.68605 27.129 2.60286L25.2437 0.716863C25.0756 0.548911 24.8477 0.454575 24.6101 0.45459C24.3725 0.45456 24.1446 0.548897 23.9765 0.716863L14.1117 10.5818L4.24687 0.716863C4.07876 0.548897 3.85084 0.45456 3.6132 0.45459C3.37559 0.454575 3.14769 0.548911 2.9796 0.716863L1.09429 2.60286C1.01103 2.68605 0.944985 2.78483 0.899922 2.89356C0.854859 3.00229 0.831665 3.11883 0.831665 3.23653C0.831665 3.35422 0.854859 3.47076 0.899922 3.57949C0.944985 3.68822 1.01103 3.787 1.09429 3.87019L10.9591 13.7344L1.09527 23.5974C0.745151 23.9477 0.745151 24.5146 1.09527 24.8647L2.98069 26.7507C3.14849 26.9185 3.37641 27.013 3.6143 27.013C3.85219 27.013 4.08005 26.9185 4.24802 26.7507L14.1116 16.887L23.9753 26.7507C24.1434 26.9187 24.3713 27.0131 24.6089 27.013C24.8469 27.013 25.0747 26.9185 25.2425 26.7507L27.1279 24.8647C27.4781 24.5146 27.4781 23.9477 27.1279 23.5974L17.2642 13.7344Z"
+              fill="black"
+            />
+          </svg>
+        ) : (
+          <svg
+            width="35"
+            height="30"
+            viewBox="0 0 35 25"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M0.541634 2.78133C0.541634 1.63074 1.47437 0.697998 2.62497 0.697998H32.625C33.7756 0.697998 34.7083 1.63074 34.7083 2.78133C34.7083 3.93192 33.7756 4.86466 32.625 4.86466H2.62497C1.47437 4.86466 0.541634 3.93192 0.541634 2.78133ZM0.541634 12.7813C0.541634 11.6307 1.47437 10.698 2.62497 10.698H32.625C33.7756 10.698 34.7083 11.6307 34.7083 12.7813C34.7083 13.9319 33.7756 14.8647 32.625 14.8647H2.62497C1.47437 14.8647 0.541634 13.9319 0.541634 12.7813ZM0.541634 22.7813C0.541634 21.6307 1.47437 20.698 2.62497 20.698H32.625C33.7756 20.698 34.7083 21.6307 34.7083 22.7813C34.7083 23.9319 33.7756 24.8647 32.625 24.8647H2.62497C1.47437 24.8647 0.541634 23.9319 0.541634 22.7813Z"
+              fill="#292929"
+            />
+          </svg>
+        )}
+      </button>
+      <Link href="/" aria-label="الصفحة الرئيسية">
         <svg
           className="navbar-logo"
           xmlns="http://www.w3.org/2000/svg"
@@ -37,14 +73,14 @@ export default function NavBar() {
         </svg>
       </Link>
       <search>
-        <form role="search" action="" className="search-form">
+        <form action="" className="search-form">
           <input
             type="text"
             className="search_input"
             placeholder="ابحث"
-            aria-label="search"
+            aria-label="بحث"
           />
-          <button aria-label="Search button" className="search-button">
+          <button aria-label="زر البحث" className="search-button">
             <svg
               width="35"
               height="34"
@@ -60,7 +96,7 @@ export default function NavBar() {
           </button>
         </form>
       </search>
-      <ul role="list">
+      <ul className={!clicked ? "hide-list" : "show-list"} id="navbar-links">
         <li>
           <Link href="#">التواصل</Link>
         </li>

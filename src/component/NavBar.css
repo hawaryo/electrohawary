@@ -8,11 +8,7 @@
   align-items: center;
   justify-content: center;
   gap: 3vw;
-
-  .toggle-icon {
-    display: none;
-  }
-  .checkbox {
+  .menu-toggle-button {
     display: none;
   }
   & ul {
@@ -45,51 +41,39 @@
 @media screen and (max-width: 64.5rem) {
   .navbar {
     gap: 0.5rem;
-    .toggle-icon {
-      display: inline;
-      &::after {
-        content: url("/images/menu-burger-icon.svg");
-        display: block;
-        line-height: 0;
+    .menu-toggle-button {
+      display: block;
+      background-color: transparent;
+      border: none;
+    }
+    .hide-list {
+      display: none;
+    }
+    .show-list {
+      display: flex;
+      opacity: 1;
+      font-size: 2rem;
+      flex-direction: column;
+      position: absolute;
+      top: 6rem;
+      background-color: var(--background-dark-c);
+      border-block-start: 2px solid black;
+      padding: 2rem;
+      gap: 3rem;
+      width: 100vw;
+      height: 100vh;
+      transition: all 200ms ease;
+      @starting-style {
+        opacity: 0;
+        height: 0;
       }
     }
-    .checkbox {
-      &:checked {
-        ~ ul {
-          display: flex;
-          opacity: 1;
-          font-size: 2rem;
-          flex-direction: column;
-          position: absolute;
-          top: 6rem;
-          background-color: var(--background-dark-c);
-          border-block-start: 2px solid black;
-          padding: 2rem;
-          gap: 3rem;
-          width: 100vw;
-          height: 100vh;
-          transition: all 200ms ease;
-          @starting-style {
-            opacity: 0;
-            height: 0;
-          }
-        }
-        ~ label.toggle-icon {
-          &::after {
-            content: url("/images/x-icon.svg");
-            margin-inline-end: 7px;
-          }
-        }
-      }
-    }
+
     .navbar-logo {
       order: 1;
     }
     & search {
       order: 3;
-    }
-    & ul {
-      display: none;
     }
     .cart {
       order: 2;
