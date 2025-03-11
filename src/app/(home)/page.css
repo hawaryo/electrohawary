@@ -1,11 +1,10 @@
 .home-page-intro {
   max-width: 750px;
-  font-size: 1rem;
   text-align: center;
-  padding-block: 4rem;
-  padding-inline: 4vw;
+  padding-block: 3rem;
+  padding-inline: min(4vw, 2rem);
   margin-inline: auto;
-  margin-block-start: 2rem;
+  margin-block-start: 3rem;
   & h1 {
     margin-block-end: 1rem;
   }

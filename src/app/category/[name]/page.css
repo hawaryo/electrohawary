@@ -1,6 +1,7 @@
 .categoty-section-heading {
   padding: 2rem;
   text-align: center;
+  margin-block: 2rem;
 }
 .products_grid {
   margin-inline: auto;
