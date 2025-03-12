@@ -1,5 +1,5 @@
 import "./page.css";
-import {createClient} from "../../../../utils/supabase/client";
+import {createClient} from "../../../utils/supabase/client";
 import Image from "next/image";
 import Link from "next/link";
 //types
