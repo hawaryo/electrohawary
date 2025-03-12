@@ -36,7 +36,7 @@ export default async function CategoryProducts({params}: props) {
 
   return (
     <>
-      <h1 className="categoty-section-heading">{`منتجات قسم ال${CategoryName}`}</h1>
+      <h1 className="category-section-heading">{`منتجات قسم ال${CategoryName}`}</h1>
       <section>
         <div className="products_grid">
           {products?.map(n => (
