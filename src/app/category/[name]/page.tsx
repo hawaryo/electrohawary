@@ -1,3 +1,4 @@
+export const runtime = "edge";
 import "./page.css";
 import {createClient} from "../../../utils/supabase/client";
 import Image from "next/image";
