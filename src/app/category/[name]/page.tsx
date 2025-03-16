@@ -1,6 +1,5 @@
 import "./page.css";
 import {createClient} from "../../../utils/supabase/client";
-import Image from "next/image";
 import Link from "next/link";
 //types
 type props = {
@@ -41,7 +40,7 @@ export default async function CategoryProducts({params}: props) {
         <div className="products_grid">
           {products?.map(n => (
             <Link href={`/product/${n.title}`} key={n.id}>
-              <Image
+              <img
                 src={n.product_image.url}
                 alt={n.product_image.alt}
                 width={300}

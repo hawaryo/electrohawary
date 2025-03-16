@@ -1,6 +1,5 @@
 /* "use cache"; */
 import "./CategorySection.css";
-import Image from "next/image";
 import {createClient} from "../utils/supabase/client";
 import Link from "next/link";
 
@@ -15,7 +14,7 @@ export default async function Instruments() {
         {category?.map(a => (
           <Link key={a.id} href={`/category/${a.name}`}>
             <div className="image-container">
-              <Image src={a.image_url} alt={a.alt} width={500} height={500} />
+              <img src={a.image_url} alt={a.alt} width={500} height={500} />
             </div>
             <div className="category-name">
               <h3>{a.name}</h3>
