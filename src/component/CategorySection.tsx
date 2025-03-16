@@ -1,4 +1,4 @@
-"use cache";
+/* "use cache"; */
 import "./CategorySection.css";
 import Image from "next/image";
 import {createClient} from "../utils/supabase/client";
