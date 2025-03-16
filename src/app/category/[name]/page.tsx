@@ -1,4 +1,4 @@
-export const revalidate = 36000; // Revalidate every 10 hours
+export const runtime = "edge";
 import "./page.css";
 import {createClient} from "../../../utils/supabase/client";
 import Image from "next/image";
