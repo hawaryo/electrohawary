@@ -10,7 +10,7 @@ export default function NavBar() {
   }
 
   return (
-    <nav className="navbar" role="navigation">
+    <nav className="navbar">
       <button
         className="menu-toggle-button"
         aria-label="اظهار القائمة"
