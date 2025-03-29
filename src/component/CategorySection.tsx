@@ -1,5 +1,4 @@
-"use cache"; 
-import "./CategorySection.css";
+  import "./CategorySection.css";
 import {createClient} from "../utils/supabase/client";
 import Link from "next/link";
 
