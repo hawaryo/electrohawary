@@ -1,13 +1,18 @@
 .navbar {
   border-bottom: 1px solid var(--primary-c);
-  padding: 0.5rem;
+  padding-block: 1.5rem;
+  padding-inline: 0.5rem;
   font-size: 1.5rem;
   font-weight: 500;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 3vw;
+  .logo {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
   .menu-toggle-button {
     display: none;
   }
@@ -16,11 +21,16 @@
     align-items: center;
     gap: 1.7rem;
   }
+  .user-account-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
   .search-form {
     display: flex;
     gap: 0.2rem;
     .search_input {
-      width: clamp(14rem, 20vw, 26rem);
+      width: clamp(10rem, 20vw, 26rem);
       height: 2.5rem;
       padding: 0.5rem;
       font-size: 1.2rem;
@@ -40,7 +50,12 @@
 /*small screens*/
 @media screen and (max-width: 64.5rem) {
   .navbar {
-    gap: 0.5rem;
+    .logo-text {
+      display: none;
+    }
+    .user-icon-text {
+      display: none;
+    }
     .menu-toggle-button {
       display: block;
       background-color: transparent;
@@ -69,20 +84,7 @@
       }
     }
 
-    .navbar-logo {
-      order: 1;
-    }
-    & search {
-      order: 3;
-    }
-    .cart {
-      order: 2;
-      @media screen and (min-width: 38.75rem) {
-        order: 4;
-      }
-    }
-
-    @media screen and (min-width: 41rem) {
+    @media screen and (min-width: 28rem) {
       gap: 3vw;
     }
   }
