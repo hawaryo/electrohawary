@@ -5,4 +5,24 @@
   max-width: 400px;
   border: 2px solid var(--primary-c);
   padding: 1rem;
+  border-radius: 4px;
+  margin-block-start: 6rem;
+
+  .form-label {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-medium);
+  }
+
+
+  .form-input {
+    border: 2px solid var(--primary-c);
+    border-radius: 3px;
+    padding: 0.3rem;
+    font-size:var(--font-size-md);
+
+    &:user-invalid{
+      border-color: rgb(206, 41, 41);
+
+    }
+  }
 }
