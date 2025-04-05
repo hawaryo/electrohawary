@@ -2,8 +2,8 @@
   border-bottom: 1px solid var(--primary-c);
   padding-block: 1.5rem;
   padding-inline: 0.5rem;
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,7 +33,7 @@
       width: clamp(10rem, 20vw, 26rem);
       height: 2.5rem;
       padding: 0.5rem;
-      font-size: 1.2rem;
+      font-size: var(--font-size-xs);
       border: 2px solid var(--primary-c);
       border-radius: 0.2rem;
     }
@@ -67,7 +67,7 @@
     .show-list {
       display: flex;
       opacity: 1;
-      font-size: 2rem;
+      font-size: var(--font-size-xl);
       flex-direction: column;
       position: absolute;
       top: 6rem;

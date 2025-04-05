@@ -3,4 +3,16 @@
   --primary-c: #000;
   --background-c: #efece7;
   --background-dark-c: #e2ddd3;
+
+  /*font*/
+  /*weight*/
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /*size*/
+  --font-size-xs: 1.2rem;
+  --font-size-sm: 1.3rem;
+  --font-size-md: 1.5rem;
+  --font-size-lg: 1.6rem;
+  --font-size-xl: 2rem;
 }
