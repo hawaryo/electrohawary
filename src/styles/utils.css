@@ -1,3 +1,20 @@
-.primary-button {
-    background-color: var(--primary-c);
+.primary-btn {
+  background-color: var(--primary-c);
+  color: var(--background-c);
+  padding: 0.6rem;
+  border: 0;
+  border-radius: 4px;
+  font-family: var(--rubik);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+}
+.secondary-btn {
+  color: var(--primary-c);
+  background-color: var(--background-c);
+  padding: 0.6rem;
+  border: 1px solid var(--primary-c);
+  border-radius: 4px;
+  font-family: var(--rubik);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
 }
