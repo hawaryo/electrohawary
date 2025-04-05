@@ -1,4 +1,4 @@
-import "./page.css";
+import styles from "./page.module.css";
 import {createClient} from "../../../utils/supabase/client";
 import Link from "next/link";
 import {Suspense} from "react";
@@ -29,15 +29,16 @@ export default async function CategoryProducts({params}: props) {
   const {data: products} = await supabase
     .from("product")
     .select("id, title,product_image(url, alt), category!inner(name)")
-    .eq("category.name", CategoryName)
-    .returns<product[]>();
+    .eq("category.name", CategoryName);
 
   return (
     <>
       <Suspense fallback={<div>Loading...</div>}>
-        <h1 className="category-section-heading">{`منتجات قسم ال${CategoryName}`}</h1>
+        <h1
+          className={styles["category-heading"]}
+        >{`منتجات قسم ال${CategoryName}`}</h1>
         <section>
-          <div className="products_grid">
+          <div className={styles["products-grid"]}>
             {products?.map(n => (
               <Link href={`/product/${n.title}`} key={n.id}>
                 <img

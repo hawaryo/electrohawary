@@ -1,4 +1,4 @@
-  import "./CategorySection.css";
+import styles from "./CategorySection.module.css";
 import {createClient} from "../utils/supabase/client";
 import Link from "next/link";
 
@@ -7,15 +7,15 @@ export default async function Instruments() {
   const {data: category} = await supabase.from("category").select();
 
   return (
-    <section className="category-section">
+    <section className={styles["category-section"]}>
       <h2>تفقد الأقسام</h2>
-      <div className="category-grid">
+      <div className={styles["category-grid"]}>
         {category?.map(a => (
           <Link key={a.id} href={`/category/${a.name}`}>
-            <div className="image-container">
+            <div className={styles["image-container"]}>
               <img src={a.image_url} alt={a.alt} width={500} height={500} />
             </div>
-            <div className="category-name">
+            <div className={styles["category-name"]}>
               <h3>{a.name}</h3>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
