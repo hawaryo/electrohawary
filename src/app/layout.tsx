@@ -2,6 +2,7 @@ import type {Metadata} from "next";
 import {Rubik} from "next/font/google";
 import "../styles/variables.css";
 import "../styles/globals.css";
+import "../styles/utils.css";
 import NavBar from "../component/NavBar";
 
 export const metadata: Metadata = {
