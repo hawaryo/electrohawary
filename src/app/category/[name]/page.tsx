@@ -9,26 +9,15 @@ type props = {
   }>;
 };
 
-type product = {
-  id: number;
-  title: string;
-  product_image: {
-    url: string;
-    alt: string;
-  };
-  category: {
-    name: string;
-  };
-};
 export default async function CategoryProducts({params}: props) {
   const param = await params;
-  const supabase = await createClient();
+  const supabase = createClient();
   const CategoryName = decodeURIComponent(param.name);
 
   //get products from the specified category
   const {data: products} = await supabase
     .from("product")
-    .select("id, title,product_image(url, alt), category!inner(name)")
+    .select("id, title,product_image!inner(url, alt), category!inner(name)")
     .eq("category.name", CategoryName);
 
   return (
