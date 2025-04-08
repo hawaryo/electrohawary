@@ -5,14 +5,11 @@ import {auth} from "../../../utils/auth/auth";
 
 //if user seeins >>>> account  elase >>>>> login
 export default async function Account() {
-    const session = await auth()
+  const session = await auth();
 
-
-    return (
-        <main className={styles["main"]}>
-          {session?<UserAccount/>:<SignInForm/>}
-        </main>
-           
-   
-    )
+  return (
+    <main className={styles["main"]}>
+      {session ? <UserAccount /> : <SignInForm />}
+    </main>
+  );
 }

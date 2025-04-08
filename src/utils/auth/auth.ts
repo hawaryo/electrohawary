@@ -4,14 +4,13 @@ import Resend from "next-auth/providers/resend"
 
 export const {handlers, auth, signIn, signOut} = NextAuth({
   // Explicit JWT strategy
-
   session: {
     strategy: "jwt",
     maxAge: 30 * 24 * 60 * 60, // 30 days*
   },
-
-  trustHost: true, // Required for Vercel deployments
-
+  // Required for Vercel deployments
+  trustHost: true,
+  
   providers: [Resend({from: process.env.RESEND_EMAIL_FROM!})],
   adapter: SupabaseAdapter({
     url: process.env.SUPABASE_URL!,

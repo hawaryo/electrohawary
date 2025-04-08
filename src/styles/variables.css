@@ -4,18 +4,17 @@
   --background-c: #efece7;
   --background-dark-c: #e2ddd3;
 
-/* Form input colors */
-  --input-invalid: #CE2929;
+  /* Form input colors */
+  --input-invalid: #ce2929;
 
- /* Font weights */
+  /* Font weights */
   --font-weight-medium: 500;
   --font-weight-bold: 700;
-
-/* Font sizes */
+  
+  /* Font sizes */
   --font-size-xs: 1.2rem;
   --font-size-sm: 1.3rem;
   --font-size-md: 1.5rem;
   --font-size-lg: 1.6rem;
   --font-size-xl: 2rem;
-  
 }
