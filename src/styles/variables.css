@@ -9,9 +9,11 @@
 
   /* Font weights */
   --font-weight-medium: 500;
+  --font-weight-semibold: 600;
   --font-weight-bold: 700;
-  
+
   /* Font sizes */
+  --font-size-xxs: 1.1rem;
   --font-size-xs: 1.2rem;
   --font-size-sm: 1.3rem;
   --font-size-md: 1.5rem;
