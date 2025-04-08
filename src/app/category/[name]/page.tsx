@@ -17,7 +17,7 @@ export default async function CategoryProducts({params}: props) {
   //get products from the specified category
   const {data: products} = await supabase
     .from("product")
-    .select("id, title,product_image!inner(url, alt), category!inner(name)")
+    .select("id, title, product_image!inner(url, alt), category!inner(name), price")
     .eq("category.name", CategoryName);
 
   return (
@@ -37,6 +37,7 @@ export default async function CategoryProducts({params}: props) {
                   height={300}
                 />
                 <h2>{n.title}</h2>
+                <p className={styles["price"]}>{n.price} جنية</p>
               </Link>
             ))}
           </div>
