@@ -3,14 +3,15 @@ import {useState} from "react";
 import {useSession} from "next-auth/react";
 import styles from "./NavBar.module.css";
 import Link from "next/link";
+
 export default function NavBar() {
-  const [clicked, setClicked] = useState(false);
-  const {data: session} = useSession();
+ const [clicked, setClicked] = useState(false);
+ const {status} = useSession();
 
   function handleClicked() {
     setClicked(!clicked);
   }
-  
+
   return (
     <nav className={styles["navbar"]}>
       <button
@@ -132,7 +133,7 @@ export default function NavBar() {
             strokeWidth="2"
             rx="2.96"
           />
-          {session ? (
+          {status === "authenticated" ? (
             <path
               xmlns="http://www.w3.org/2000/svg"
               d="M21.334 19.835c2.527-1.235 4.267-3.831 4.267-6.833 0-4.198-3.403-7.601-7.601-7.601s-7.601 3.403-7.601 7.601c0 3.002 1.74 5.598 4.267 6.833-.331.102-.658.22-.979.354a11.27 11.27 0 0 0-6.099 6.099 11.27 11.27 0 0 0-.858 4.313h22.538a11.27 11.27 0 0 0-3.301-7.968 11.27 11.27 0 0 0-3.656-2.443 11.26 11.26 0 0 0-.979-.354z"
