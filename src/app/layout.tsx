@@ -1,4 +1,5 @@
 import type {Metadata} from "next";
+import {SessionProvider} from "next-auth/react";
 import {Rubik} from "next/font/google";
 import "../styles/variables.css";
 import "../styles/globals.css";
@@ -26,7 +27,9 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl" className={rubikFont.className}>
       <body>
-        <NavBar />
+        <SessionProvider>
+          <NavBar />
+        </SessionProvider>
         {children}
       </body>
     </html>
