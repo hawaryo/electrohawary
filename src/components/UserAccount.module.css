@@ -1,0 +1,17 @@
+.main{
+    margin-block-start: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.account-img{
+    border: 2px solid var(--primary-c);
+    border-radius: 3px;
+}
+
+.account-email{
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-medium);
+    margin-block-end: 2rem;
+}
