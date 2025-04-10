@@ -1,6 +1,6 @@
 import {signOut} from "../utils/auth/auth";
 
-export function SignOut() {
+export default function SignOut() {
   return (
     <form
       action={async () => {
@@ -9,7 +9,7 @@ export function SignOut() {
       }}
     >
       <button type="submit" className="primary-btn">
-        Sign Out
+        تسجيل الخروج
       </button>
     </form>
   );
