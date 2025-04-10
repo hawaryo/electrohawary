@@ -3,7 +3,7 @@ import {Rubik} from "next/font/google";
 import "../styles/variables.css";
 import "../styles/globals.css";
 import "../styles/utils.css";
-import NavBar from "../component/NavBar";
+import NavBar from "../components/NavBar";
 
 export const metadata: Metadata = {
   icons: {

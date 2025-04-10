@@ -1,5 +1,5 @@
 import "./page.css";
-import SignInForm from "../../../component/SignInForm";
+import SignInForm from "../../../components/SignInForm";
 
 export default function Login() {
     return (

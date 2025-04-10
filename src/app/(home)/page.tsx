@@ -1,4 +1,4 @@
-import CategorySection from "../../component/CategorySection";
+import CategorySection from "../../components/CategorySection";
 import {Suspense} from "react";
 import styles from "./page.module.css";
 export default function Instruments() {
