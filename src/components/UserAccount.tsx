@@ -3,7 +3,6 @@ import {auth} from "../utils/auth/auth";
 import styles from "./UserAccount.module.css";
 export default async function UserAccount() {
     const session = await auth();
-    console.log(session);
   return (
     <section className={styles["main"]}>
       <img
