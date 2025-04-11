@@ -1,6 +1,7 @@
-import NextAuth from "next-auth"
-import { SupabaseAdapter } from "@auth/supabase-adapter"
-import Resend from "next-auth/providers/resend"
+import NextAuth from "next-auth";
+import {SupabaseAdapter} from "@auth/supabase-adapter";
+import Resend from "next-auth/providers/resend";
+import sendVerificationRequest from "./authSendRequest";
 
 // Extend the User type to include the is_vip property
 declare module "next-auth" {
@@ -21,8 +22,20 @@ export const {handlers, auth, signIn, signOut} = NextAuth({
   },
   // Required for Vercel deployments
   trustHost: true,
-  
-  providers: [Resend({from: process.env.RESEND_EMAIL_FROM!})],
+
+  // Configure authentication provider(Resend)
+  providers: [
+    Resend({
+      from: process.env.RESEND_EMAIL_FROM!,
+      sendVerificationRequest,
+    }),
+  ],
+  pages: {
+    verifyRequest: "/verify-request",
+    signIn: "/account",
+  },
+
+  // Configure Supabase
   adapter: SupabaseAdapter({
     url: process.env.SUPABASE_URL!,
     secret: process.env.SUPABASE_SERVICE_ROLE_KEY!,
