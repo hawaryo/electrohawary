@@ -4,7 +4,7 @@ import SigninButton from "./SigninButton";
 
 async function submitEmail(formData: FormData) {
   "use server";
-  await signIn("resend", formData);
+  await signIn("resend", {email: formData.get("email"), redirectTo: "/"});
 }
 
 export default function SignInForm() {
