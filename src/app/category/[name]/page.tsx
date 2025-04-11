@@ -3,6 +3,7 @@ import {createClient} from "../../../utils/supabase/client";
 import {auth} from "../../../utils/auth/auth";
 import Link from "next/link";
 import {Suspense} from "react";
+import ShareButton from "@/components/ShareButton";
 //types
 type props = {
   params: Promise<{
@@ -27,9 +28,11 @@ export default async function CategoryProducts({params}: props) {
   return (
     <>
       <Suspense fallback={<div>Loading...</div>}>
-        <h1
-          className={styles["category-heading"]}
-        >{`منتجات قسم ال${CategoryName}`}</h1>
+        <h1 className={styles["category-heading"]}>
+          <span>{`منتجات قسم ال${CategoryName}`}</span>
+          <ShareButton url={CategoryName} />
+        </h1>
+
         <section>
           <div className={styles["products-grid"]}>
             {products?.map(n => (

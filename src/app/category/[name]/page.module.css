@@ -1,7 +1,10 @@
 .category-heading {
   padding: 2rem;
-  text-align: center;
   margin-block: 2rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.5rem;
 }
 .products-grid {
   margin-inline: auto;
@@ -32,11 +35,11 @@
     margin-block-start: 0.5rem;
   }
 
-  .price{
+  .price {
     font-size: var(--font-size-xxs);
     font-weight: var(--font-weight-semibold);
     margin-block-start: 0.6rem;
-    width:fit-content;
+    width: fit-content;
     border: 2px solid var(--primary-c);
     border-radius: 2px;
     padding: 3px;
