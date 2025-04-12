@@ -1,4 +1,4 @@
-import CategorySection from "../../components/CategorySection";
+import CategoryList from "../../components/CategoryList";
 import {Suspense} from "react";
 import styles from "./page.module.css";
 export default function Instruments() {
@@ -12,7 +12,7 @@ export default function Instruments() {
         </p>
       </div>
       <Suspense fallback={<div>Loading...</div>}>
-        <CategorySection />
+        <CategoryList />
       </Suspense>
     </main>
   );
