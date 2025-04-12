@@ -1,17 +1,33 @@
-.main{
-    margin-block-start: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+.main {
+  margin-block-start: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
-.account-img{
-    border: 2px solid var(--primary-c);
-    border-radius: 3px;
+.account-img {
+  border: 2px solid var(--primary-c);
+  border-radius: 3px;
 }
 
-.account-email{
-    font-size: var(--font-size-md);
-    font-weight: var(--font-weight-medium);
-    margin-block-end: 2rem;
+.account-email {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  margin-block-end: 2rem;
+  text-align: center;
+}
+.account-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 51.75rem) {
+  .main {
+    flex-direction: row;
+  }
+  .account-info {
+    display: block;
+  }
 }
