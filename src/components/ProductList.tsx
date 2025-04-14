@@ -19,7 +19,11 @@ export default async function ProductList({CategoryName}: Props) {
     <section>
       <div className={styles["products-grid"]}>
         {products?.map(n => (
-          <Link href={`/product/${n.title}`} key={n.id}>
+          <Link
+            href={`/product/${n.title}`}
+            key={n.id}
+            className={styles["product-card"]}
+          >
             <img
               src={n.product_image.url}
               alt={n.product_image.alt}
