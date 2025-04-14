@@ -3,20 +3,16 @@ import {createClient} from "../utils/supabase/client";
 import {auth} from "../utils/auth/auth";
 import Link from "next/link";
 
-export default async function ProductList({
-  CategoryName,
-}: {
-  CategoryName: string;
-}) {
+type Props = {CategoryName: string};
+
+export default async function ProductList({CategoryName}: Props) {
   const supabase = createClient();
   const session = await auth();
 
   //get products from the specified category
   const {data: products} = await supabase
     .from("product")
-    .select(
-      "id, title, product_image!inner(url, alt), category!inner(name), price"
-    )
+    .select("id, title, product_image!inner(url, alt), category!inner(name), price")
     .eq("category.name", CategoryName);
 
   return (
