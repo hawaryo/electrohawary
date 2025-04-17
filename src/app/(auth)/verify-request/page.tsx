@@ -1,6 +1,6 @@
 import styles from "./page.module.css";
 
-export default function Account() {
+export default function  Verify() {
   return (
     <main className={styles["main"]}>
       <h1>تفقد البريد الالكتروني</h1>

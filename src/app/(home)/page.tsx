@@ -1,7 +1,7 @@
 import CategoryList from "../../components/CategoryList";
 import {Suspense} from "react";
 import styles from "./page.module.css";
-export default function Instruments() {
+export default function Home() {
   return (
     <main>
       <div className={styles["intro"]}>
