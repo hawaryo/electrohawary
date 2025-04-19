@@ -89,6 +89,7 @@ export default function NavBar() {
             className={styles["search-input"]}
             placeholder="ابحث"
             aria-label="بحث"
+            name="search"
           />
           <button aria-label="زر البحث" className={styles["search-button"]}>
             <svg
