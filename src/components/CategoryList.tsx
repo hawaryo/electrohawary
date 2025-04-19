@@ -3,7 +3,7 @@ import {createClient} from "../utils/supabase/client";
 import Link from "next/link";
 
 export default async function Instruments() {
-  const supabase = await createClient();
+  const supabase = createClient();
   const {data: category} = await supabase.from("category").select();
 
   return (
