@@ -1,4 +1,5 @@
 .navbar {
+  margin-inline: auto;
   border-bottom: 1px solid var(--primary-c);
   padding-block: 1.5rem;
   padding-inline: 0.5rem;
@@ -7,7 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3vw;
+  gap: min(8rem, 3vw);
   .logo {
     display: flex;
     align-items: baseline;
@@ -48,7 +49,7 @@
 }
 
 /*small screens*/
-@media screen and (max-width: 64.5rem) {
+@media screen and (max-width: 56.25rem) {
   .navbar {
     .logo-text {
       display: none;
@@ -70,7 +71,7 @@
       font-size: var(--font-size-xl);
       flex-direction: column;
       position: absolute;
-      top: 6rem;
+      top: 5.5rem;
       background-color: var(--background-dark-c);
       border-block-start: 2px solid black;
       padding: 2rem;
@@ -82,10 +83,6 @@
         opacity: 0;
         height: 0;
       }
-    }
-
-    @media screen and (min-width: 28rem) {
-      gap: 3vw;
     }
   }
 }
