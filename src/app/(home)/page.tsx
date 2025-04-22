@@ -1,6 +1,7 @@
 import CategoryList from "../../components/CategoryList";
-import {Suspense} from "react";
+import BrandsSection from "../../components/BrandsSection";
 import styles from "./page.module.css";
+import {Suspense} from "react";
 export default function Home() {
   return (
     <main>
@@ -14,6 +15,7 @@ export default function Home() {
       <Suspense fallback={<div>Loading...</div>}>
         <CategoryList />
       </Suspense>
+      <BrandsSection />
     </main>
   );
 }
