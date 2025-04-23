@@ -3,23 +3,24 @@ type image = {
   alt: string;
   width: number;
   height: number;
+  id: number;
 };
 
-export default function duplicateImages(images: image[]) {
+export default function DuplicateImages({images}: {images: image[]}) {
   return (
     <>
-      {images.map((i, index) => (
+      {images.map(i => (
         <img
-          key={index}
+          key={i.id}
           src={i.src}
           alt={i.alt}
           width={i.width}
           height={i.height}
         />
       ))}
-      {images.map((i, index) => (
+      {images.map(i => (
         <img
-          key={index}
+          key={i.id}
           src={i.src}
           alt={i.alt}
           width={i.width}
