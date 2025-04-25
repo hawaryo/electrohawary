@@ -10,30 +10,30 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@auth/supabase-adapter": "^1.8.0",
+    "@auth/supabase-adapter": "^1.9.0",
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.49.4",
-    "babel-plugin-react-compiler": "^19.0.0-beta-3229e95-20250315",
+    "babel-plugin-react-compiler": "^19.1.0-rc.1",
     "next": "^15.3.1",
     "next-auth": "^5.0.0-beta.25",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "zod": "^3.24.2"
+    "zod": "^3.24.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.2.0",
-    "@types/node": "^22.14.1",
+    "@testing-library/react": "^16.3.0",
+    "@types/node": "^22.15.2",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.1.7",
+    "eslint-config-next": "15.3.1",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-react-compiler": "^19.0.0-beta-3229e95-20250315",
+    "eslint-plugin-react-compiler": "^19.1.0-rc.1",
     "eslint-plugin-sonarjs": "^3.0.2",
-    "jsdom": "^26.0.0",
-    "typescript": "^5.8.2",
-    "vitest": "^3.0.8"
+    "jsdom": "^26.1.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.2"
   }
 }
