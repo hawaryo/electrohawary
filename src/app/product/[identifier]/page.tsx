@@ -10,9 +10,7 @@ type Props = {
 export default async function Product({params}: Props) {
   const param = await params;
 
-  const productId = parseInt(
-    decodeURIComponent(param.identifier).split("-")[0]
-  );
+  const productId = parseInt(decodeURIComponent(param.identifier).split("-")[0]);
 
   return (
     <main className={styles["main"]}>
