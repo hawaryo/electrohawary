@@ -1,0 +1,17 @@
+
+.variants-container {
+  display: flex;
+  gap: 6px;
+  margin-block-start: 12px;
+}
+.variant-btn {
+  width: 30px;
+  height: 30px;
+  font-size: var(--font-size-xs);
+  color: var(--secondary-c);
+  background-color: var(--primary-c);
+  border-radius: 2px;
+}
+.selected{
+  outline: 3px solid rgb(255, 199, 96);
+}
