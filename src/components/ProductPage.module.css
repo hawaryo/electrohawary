@@ -9,17 +9,6 @@
   gap: 0.6rem;
 }
 
-.breadcrumb {
-  display: flex;
-  gap: 13px;
-  align-items: end;
-  margin-block-end: 0.5rem;
-  .category-link-name {
-    text-box-trim: trim-both;
-    font-size: var(--font-size-xs);
-    font-weight: var(--font-weight-medium);
-  }
-}
 .img-details-container {
   display: flex;
   flex-direction: column;
@@ -42,9 +31,6 @@
 .product-description {
   margin-block-start: 2rem;
 }
-/* .product-features {
-  list-style: circle;
-} */
 
 @media screen and (min-width: 54rem) {
   .img-details-container {
