@@ -1,14 +1,49 @@
-export type Json =
-  | string
-  | number
-  | boolean
-  | null
-  | {[key: string]: Json | undefined}
-  | Json[];
+export type Json = string | number | boolean | {[key: string]: Json | undefined} | Json[];
 
 export type Database = {
   public: {
     Tables: {
+      attribute_name: {
+        Row: {
+          id: number;
+          name: string;
+        };
+        Insert: {
+          id?: number;
+          name: string;
+        };
+        Update: {
+          id?: number;
+          name?: string;
+        };
+        Relationships: [];
+      };
+      attribute_value: {
+        Row: {
+          attribute_name_id: number | null;
+          id: number;
+          value: string | null;
+        };
+        Insert: {
+          attribute_name_id?: number | null;
+          id?: number;
+          value?: string | null;
+        };
+        Update: {
+          attribute_name_id?: number | null;
+          id?: number;
+          value?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "attribute_value_attribute_name_id_fkey";
+            columns: ["attribute_name_id"];
+            isOneToOne: false;
+            referencedRelation: "attribute_name";
+            referencedColumns: ["id"];
+          }
+        ];
+      };
       brand: {
         Row: {
           id: number;
@@ -29,21 +64,21 @@ export type Database = {
       };
       category: {
         Row: {
-          alt: string;
+          alt: string | null;
           id: number;
           image_url: string;
           name: string;
         };
         Insert: {
-          alt: string;
+          alt?: string | null;
           id?: number;
-          image_url: string;
+          image_url?: string | null;
           name: string;
         };
         Update: {
-          alt?: string;
+          alt?: string | null;
           id?: number;
-          image_url?: string;
+          image_url?: string | null;
           name?: string;
         };
         Relationships: [];
@@ -54,13 +89,13 @@ export type Database = {
           category_id: number | null;
           created_at: string;
           description: string;
-          features: Json | null;
+          features: string[];
           id: number;
-          image_id: number;
-          instock: boolean;
+          image_id: number | null;
+          instock: boolean | null;
           meta: Json | null;
           model: string | null;
-          price: number;
+          price: number | null;
           sku: string | null;
           title: string;
         };
@@ -71,11 +106,11 @@ export type Database = {
           description: string;
           features?: Json | null;
           id?: number;
-          image_id: number;
-          instock: boolean;
+          image_id?: number | null;
+          instock?: boolean | null;
           meta?: Json | null;
           model?: string | null;
-          price: number;
+          price?: number | null;
           sku?: string | null;
           title: string;
         };
@@ -86,11 +121,11 @@ export type Database = {
           description?: string;
           features?: Json | null;
           id?: number;
-          image_id?: number;
-          instock?: boolean;
+          image_id?: number | null;
+          instock?: boolean | null;
           meta?: Json | null;
           model?: string | null;
-          price?: number;
+          price?: number | null;
           sku?: string | null;
           title?: string;
         };
@@ -136,12 +171,157 @@ export type Database = {
         };
         Relationships: [];
       };
+      sub_category: {
+        Row: {
+          id: number;
+          name: string | null;
+          parent_id: number;
+        };
+        Insert: {
+          id?: number;
+          name?: string | null;
+          parent_id: number;
+        };
+        Update: {
+          id?: number;
+          name?: string | null;
+          parent_id?: number;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "sub_category_parent_id_fkey";
+            columns: ["parent_id"];
+            isOneToOne: false;
+            referencedRelation: "category";
+            referencedColumns: ["id"];
+          }
+        ];
+      };
+      variant: {
+        Row: {
+          brand_id: number | null;
+          category_id: number | null;
+          features: Json | null;
+          id: number;
+          image_id: number;
+          instock: boolean | null;
+          meta: Json | null;
+          model: string | null;
+          parent_id: number;
+          price: number;
+          sku: string | null;
+        };
+        Insert: {
+          brand_id?: number | null;
+          category_id?: number | null;
+          features?: Json | null;
+          id?: number;
+          image_id: number;
+          instock?: boolean | null;
+          meta?: Json | null;
+          model?: string | null;
+          parent_id: number;
+          price: number;
+          sku?: string | null;
+        };
+        Update: {
+          brand_id?: number | null;
+          category_id?: number | null;
+          features?: Json | null;
+          id?: number;
+          image_id?: number;
+          instock?: boolean | null;
+          meta?: Json | null;
+          model?: string | null;
+          parent_id?: number;
+          price?: number;
+          sku?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "variant_brand_id_fkey";
+            columns: ["brand_id"];
+            isOneToOne: false;
+            referencedRelation: "brand";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "variant_category_id_fkey";
+            columns: ["category_id"];
+            isOneToOne: false;
+            referencedRelation: "category";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "variant_image_id_fkey";
+            columns: ["image_id"];
+            isOneToOne: false;
+            referencedRelation: "product_image";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "variant_parent_id_fkey";
+            columns: ["parent_id"];
+            isOneToOne: false;
+            referencedRelation: "product";
+            referencedColumns: ["id"];
+          }
+        ];
+      };
+      variant_attribute_value_mapping: {
+        Row: {
+          attribute_value_id: number;
+          id: number;
+          variant_id: number;
+        };
+        Insert: {
+          attribute_value_id: number;
+          id?: number;
+          variant_id: number;
+        };
+        Update: {
+          attribute_value_id?: number;
+          id?: number;
+          variant_id?: number;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "variant_attribute_value_mapping_attribute_value_id_fkey";
+            columns: ["attribute_value_id"];
+            isOneToOne: false;
+            referencedRelation: "attribute_value";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "variant_attribute_value_mapping_variant_id_fkey";
+            columns: ["variant_id"];
+            isOneToOne: false;
+            referencedRelation: "variant";
+            referencedColumns: ["id"];
+          }
+        ];
+      };
     };
     Views: {
       never: never;
     };
     Functions: {
-      never: never;
+      get_products_with_variant: {
+        Args: {in_category_name: string};
+        Returns: {
+          id: number;
+          product_title: string;
+          image_url: string;
+          image_alt: string;
+          price: number;
+          attributes: {
+            [attributeName: string]: {
+              value: string | number;
+              variant_id: number;
+            }[];
+          } | null;
+        }[];
+      };
     };
     Enums: {
       never: never;
@@ -171,10 +351,8 @@ export type Tables<
     }
     ? R
     : never
-  : DefaultSchemaTableNameOrOptions extends keyof (DefaultSchema["Tables"] &
-      DefaultSchema["Views"])
-  ? (DefaultSchema["Tables"] &
-      DefaultSchema["Views"])[DefaultSchemaTableNameOrOptions] extends {
+  : DefaultSchemaTableNameOrOptions extends keyof (DefaultSchema["Tables"] & DefaultSchema["Views"])
+  ? (DefaultSchema["Tables"] & DefaultSchema["Views"])[DefaultSchemaTableNameOrOptions] extends {
       Row: infer R;
     }
     ? R
@@ -182,9 +360,7 @@ export type Tables<
   : never;
 
 export type TablesInsert<
-  DefaultSchemaTableNameOrOptions extends
-    | keyof DefaultSchema["Tables"]
-    | {schema: keyof Database},
+  DefaultSchemaTableNameOrOptions extends keyof DefaultSchema["Tables"] | {schema: keyof Database},
   TableName extends DefaultSchemaTableNameOrOptions extends {
     schema: keyof Database;
   }
@@ -205,9 +381,7 @@ export type TablesInsert<
   : never;
 
 export type TablesUpdate<
-  DefaultSchemaTableNameOrOptions extends
-    | keyof DefaultSchema["Tables"]
-    | {schema: keyof Database},
+  DefaultSchemaTableNameOrOptions extends keyof DefaultSchema["Tables"] | {schema: keyof Database},
   TableName extends DefaultSchemaTableNameOrOptions extends {
     schema: keyof Database;
   }
@@ -228,9 +402,7 @@ export type TablesUpdate<
   : never;
 
 export type Enums<
-  DefaultSchemaEnumNameOrOptions extends
-    | keyof DefaultSchema["Enums"]
-    | {schema: keyof Database},
+  DefaultSchemaEnumNameOrOptions extends keyof DefaultSchema["Enums"] | {schema: keyof Database},
   EnumName extends DefaultSchemaEnumNameOrOptions extends {
     schema: keyof Database;
   }
@@ -243,9 +415,7 @@ export type Enums<
   : never;
 
 export type CompositeTypes<
-  PublicCompositeTypeNameOrOptions extends
-    | keyof DefaultSchema["CompositeTypes"]
-    | {schema: keyof Database},
+  PublicCompositeTypeNameOrOptions extends keyof DefaultSchema["CompositeTypes"] | {schema: keyof Database},
   CompositeTypeName extends PublicCompositeTypeNameOrOptions extends {
     schema: keyof Database;
   }
