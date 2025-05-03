@@ -1,7 +1,9 @@
 :root {
   /*color*/
   --primary-c: #000;
+  --secondary-c: #ffffff;
   --background-c: #efece7;
+  --background-medium-c: #f0ece5;
   --background-dark-c: #e2ddd3;
 
   /* Form input colors */
