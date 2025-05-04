@@ -6,10 +6,10 @@
  * @returns {JSX.Element} A product card with interactive variant selection.
  */
 
-import {createClient} from "../../utils/supabase/client";
+import {createClient} from "../../../utils/supabase/client";
 import styles from "./ProductCard.module.css";
-import secondaryStyles from "./ProductCardWithVariant.module.css";
-import type {ProductCardWithVariants, ProductVariantDetails} from "../../utils/types/ProductCard";
+import secondaryStyles from "./ProductCardVariant.module.css";
+import type {ProductCardWithVariants, ProductVariantDetails} from "../../../utils/types/ProductCard";
 import React, {useState, useEffect} from "react";
 import Link from "next/link";
 
@@ -55,7 +55,7 @@ export default function ProductCardWithVariants({ product, session }: Props) {
   }, [VariantDetails.variantId]);
 
  
-  function handleclick(e: React.MouseEvent<HTMLButtonElement>) {
+  function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
     setVariantDetails({
       ...VariantDetails,
       variantId: Number(e.currentTarget.value),
@@ -83,7 +83,7 @@ export default function ProductCardWithVariants({ product, session }: Props) {
         {firstAttributeVariants.map(v => (
           <button
             key={v.variant_id}
-            onClick={handleclick}
+            onClick={handleClick}
             value={v.variant_id}
             data-variant-value={v.value}
             className={`${secondaryStyles["variant-btn"]}

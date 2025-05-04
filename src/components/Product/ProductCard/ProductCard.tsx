@@ -1,6 +1,6 @@
 import styles from "./ProductCard.module.css";
 import Link from "next/link";
-import type {ProductCardSimple} from "../../utils/types/ProductCard";
+import type {ProductCardSimple} from "../../../utils/types/ProductCard";
 
 type Props = {
   product: ProductCardSimple;
