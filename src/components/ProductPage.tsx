@@ -3,10 +3,14 @@ import {createClient} from "../utils/supabase/client";
 import {auth} from "../utils/auth/auth";
 import BreadCrumb from "./ui/BreadCrumb";
 
-type Props = {
-  productId: number;
+type props = {
+  params: {
+    identifier: string;
+  };
 };
-export default async function ProductPage({productId}: Props) {
+export default async function ProductPage({params}: props) {
+  const productId = parseInt(decodeURIComponent(params.identifier).split("-")[0]);
+
   const session = await auth();
   const supabase = createClient();
   const {data: productDetails} = await supabase
