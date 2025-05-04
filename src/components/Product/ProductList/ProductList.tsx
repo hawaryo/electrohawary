@@ -1,12 +1,12 @@
-import ProductCardSimple from "./Product/ProductCard/ProductCard";
-import ProductCardWithVariants from "./Product/ProductCard/ProductCardVariant";
+import ProductCardSimple from "../ProductCard/ProductCard";
+import ProductCardWithVariants from "../ProductCard/ProductCardVariant";
 import styles from "./ProductList.module.css";
-import {createClient} from "../utils/supabase/client";
-import {auth} from "../utils/auth/auth";
+import {createClient} from "../../../utils/supabase/client";
+import {auth} from "../../../utils/auth/auth";
 import type {
   ProductCardSimple as ProductCardSimpleType,
   ProductCardWithVariants as ProductCardWithVariantsType,
-} from "../utils/types/ProductCard";
+} from "../../../utils/types/ProductCard";
 
 type Props = {CategoryName: string};
 

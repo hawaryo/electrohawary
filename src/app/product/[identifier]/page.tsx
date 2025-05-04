@@ -1,6 +1,6 @@
 import styles from "./page.module.css";
 import {Suspense} from "react";
-import ProductPage from "@/components/ProductPage";
+import ProductPage from "@/components/Product/ProductPage/ProductPage";
 
 type props = {
   params: {

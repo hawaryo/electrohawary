@@ -1,6 +1,6 @@
 import styles from "./page.module.css";
 import {Suspense} from "react";
-import ProductList from "@/components/ProductList";
+import ProductList from "@/components/Product/ProductList/ProductList";
 import ShareButton from "@/components/ShareButton";
 //types
 type props = {

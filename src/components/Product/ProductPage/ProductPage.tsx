@@ -1,7 +1,7 @@
 import styles from "./ProductPage.module.css";
-import {createClient} from "../utils/supabase/client";
-import {auth} from "../utils/auth/auth";
-import BreadCrumb from "./ui/BreadCrumb";
+import {createClient} from "../../../utils/supabase/client";
+import {auth} from "../../../utils/auth/auth";
+import BreadCrumb from "../../ui/BreadCrumb";
 
 type props = {
   params: {
