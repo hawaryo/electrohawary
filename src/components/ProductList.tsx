@@ -1,5 +1,5 @@
-import ProductCardSimple from "./ProductCard/ProductCardSimple";
-import ProductCardWithVariants from "./ProductCard/ProductCardWithVariant";
+import ProductCardSimple from "./Product/ProductCard/ProductCard";
+import ProductCardWithVariants from "./Product/ProductCard/ProductCardVariant";
 import styles from "./ProductList.module.css";
 import {createClient} from "../utils/supabase/client";
 import {auth} from "../utils/auth/auth";
