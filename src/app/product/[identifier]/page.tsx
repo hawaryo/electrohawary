@@ -2,20 +2,20 @@ import styles from "./page.module.css";
 import {Suspense} from "react";
 import ProductPage from "@/components/ProductPage";
 
-type Props = {
-  params: Promise<{
+type props = {
+  params: {
     identifier: string;
-  }>;
-};
-export default async function Product({params}: Props) {
+  };
+  searchParams: {
+    [key: string]: string ;
+  };
+}
+export default async function Product({params, searchParams}: props) {
   const param = await params;
-
-  const productId = parseInt(decodeURIComponent(param.identifier).split("-")[0]);
-
   return (
     <main className={styles["main"]}>
       <Suspense fallback={<div>Loading...</div>}>
-        <ProductPage productId={productId} />
+        <ProductPage params={param}/>
       </Suspense>
     </main>
   );
