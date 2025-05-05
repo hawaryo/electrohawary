@@ -4,8 +4,7 @@
   padding: 1rem;
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 1.4rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 
   @media screen and (min-width: 32.5rem) {
     grid-template-columns: repeat(auto-fill, minmax(214px, 1fr));
