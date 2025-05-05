@@ -72,7 +72,7 @@ export type Database = {
         Insert: {
           alt?: string;
           id?: number;
-          image_url?: string;
+          image_url: string;
           name: string;
         };
         Update: {
@@ -85,7 +85,7 @@ export type Database = {
       };
       product: {
         Row: {
-          brand_id: number | null;
+          brand_id: number;
           category_id: number | null;
           created_at: string;
           description: string;
@@ -100,11 +100,11 @@ export type Database = {
           title: string;
         };
         Insert: {
-          brand_id?: number | null;
+          brand_id: number;
           category_id?: number | null;
           created_at?: string;
           description: string;
-          features?: Json | null;
+          features: Json;
           id?: number;
           image_id?: number | null;
           instock?: boolean | null;
@@ -115,11 +115,11 @@ export type Database = {
           title: string;
         };
         Update: {
-          brand_id?: number | null;
+          brand_id?: number;
           category_id?: number | null;
           created_at?: string;
           description?: string;
-          features?: Json | null;
+          features?: Json;
           id?: number;
           image_id?: number | null;
           instock?: boolean | null;
@@ -201,7 +201,8 @@ export type Database = {
         Row: {
           brand_id: number | null;
           category_id: number | null;
-          features: Json | null;
+          description: string | null;
+          features: string[] | null;
           id: number;
           image_id: number;
           instock: boolean | null;
@@ -210,10 +211,12 @@ export type Database = {
           parent_id: number;
           price: number;
           sku: string | null;
+          title: string | null;
         };
         Insert: {
           brand_id?: number | null;
           category_id?: number | null;
+          description?: string | null;
           features?: Json | null;
           id?: number;
           image_id: number;
@@ -223,10 +226,12 @@ export type Database = {
           parent_id: number;
           price: number;
           sku?: string | null;
+          title?: string | null;
         };
         Update: {
           brand_id?: number | null;
           category_id?: number | null;
+          description?: string | null;
           features?: Json | null;
           id?: number;
           image_id?: number;
@@ -236,6 +241,7 @@ export type Database = {
           parent_id?: number;
           price?: number;
           sku?: string | null;
+          title?: string | null;
         };
         Relationships: [
           {
@@ -306,6 +312,12 @@ export type Database = {
       never: never;
     };
     Functions: {
+      get_product_variant_attributes: {
+        Args: {in_product_id: number};
+        Returns: {
+          [attributeName: string]: string[];
+        };
+      };
       get_products_with_variant: {
         Args: {in_category_name: string};
         Returns: {
@@ -315,11 +327,33 @@ export type Database = {
           image_alt: string;
           price: number;
           attributes: {
-            [attributeName: string]: {
+            [key: string]: {
               value: string | number;
               variant_id: number;
             }[];
           } | null;
+        }[];
+      };
+      get_variant_by_attributes: {
+        Args: {
+          in_product_id: number;
+          in_attribute_name: string;
+          in_attribute_value: string;
+        };
+        Returns: {
+          variant_id: number;
+          title: string;
+          price: number;
+          sku: string;
+          features: string[];
+          description: string;
+          instock: boolean;
+          model: string;
+          meta: Json;
+          category_name: string;
+          brand_name: string;
+          image_url: string;
+          image_alt: string;
         }[];
       };
     };

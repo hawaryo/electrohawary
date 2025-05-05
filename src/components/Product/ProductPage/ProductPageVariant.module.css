@@ -1,0 +1,20 @@
+.variants-list {
+  display: flex;
+  gap: 6px;
+}
+
+.variant-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  font-size: var(--font-size-xs);
+  color: var(--secondary-c);
+  background-color: var(--primary-c);
+  border-radius: 4px;
+}
+
+.active {
+  outline: 3px solid rgb(255, 199, 96);
+}
