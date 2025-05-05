@@ -51,7 +51,7 @@ export default async function ProductPage({params, searchParams}: props) {
 
           <div className={styles["product-details"]}>
             <h1 className={styles["product-title"]}>{variant?.title}</h1>
-            {session?.user.is_vip ? <p className={styles["price"]}>{variant?.price} جنية</p> : null}
+            {session?.user.is_vip ? <h2 className={styles["price"]}>{variant?.price} جنية</h2> : null}
             <h2 className={secondryStyles["attribute-name"]}>{firstAttributeName}</h2>
             <div className={secondryStyles["variants-list"]}>
               {firstAttributeVariants.map(v => (
