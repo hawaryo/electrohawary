@@ -16,7 +16,7 @@ export default async function CategoryProducts({params}: props) {
   return (
     <>
       <h1 className={styles["category-heading"]}>
-        <span>{`منتجات قسم ال${CategoryName}`}</span>
+        <span className={styles["category-title"]}>{`منتجات قسم ال${CategoryName}`}</span>
         <ShareButton url={CategoryName} />
       </h1>
 

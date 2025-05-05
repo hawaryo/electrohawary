@@ -5,4 +5,8 @@
   align-items: flex-end;
   justify-content: center;
   gap: 0.5rem;
+
+  .category-title {
+    font-size: clamp(1.7rem, 7vw, 2rem);
+  }
 }
