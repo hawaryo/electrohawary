@@ -5,6 +5,7 @@
   margin-block-start: 12px;
 }
 .variant-btn {
+  border: none;
   width: 30px;
   height: 30px;
   font-size: var(--font-size-200);
