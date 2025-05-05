@@ -22,6 +22,14 @@
 .product-title {
   margin-block-end: 1rem;
 }
+.features-title {
+  margin-block-end: 0.5rem;
+}
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
 .price {
   font-size: var(--font-size-500);
   font-weight: var(--font-weight-medium);
@@ -30,6 +38,9 @@
 
 .product-description {
   margin-block-start: 2rem;
+  .description-title {
+    margin-block-end: 0.5rem;
+  }
 }
 
 @media screen and (min-width: 54rem) {

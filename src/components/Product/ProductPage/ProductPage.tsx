@@ -35,8 +35,8 @@ export default async function ProductPage({params}: props) {
           <div className={styles["product-details"]}>
             <h1 className={styles["product-title"]}>{productDetails?.title}</h1>
             {session?.user.is_vip ? <p className={styles["price"]}>{productDetails?.price} جنية</p> : null}
-            <h2>المميزات</h2>
-            <ul className={styles["product-features"]}>
+            <h2 className={styles["features-title"]}>المميزات</h2>
+            <ul className={styles["features-list"]}>
               {productDetails?.features.map((f: string) => (
                 <li key={f}>{f}</li>
               ))}
@@ -45,7 +45,7 @@ export default async function ProductPage({params}: props) {
         </div>
       </div>
       <div className={styles["product-description"]}>
-        <h2>وصف المنتج</h2>
+        <h2 className={styles["description-title"]}>وصف المنتج</h2>
         <p>{productDetails?.description}</p>
       </div>
     </section>

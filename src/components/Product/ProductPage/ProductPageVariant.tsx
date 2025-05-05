@@ -38,7 +38,6 @@ export default async function ProductPage({params, searchParams}: props) {
 
   return (
     <section className={styles["product-section"]}>
-      <div>{JSON.stringify(variantsList)}</div>
       <div className={styles["product-card"]}>
         <BreadCrumb linksList={[`${variant?.category_name}`]} />
         <div className={styles["img-details-container"]}>
@@ -53,7 +52,7 @@ export default async function ProductPage({params, searchParams}: props) {
           <div className={styles["product-details"]}>
             <h1 className={styles["product-title"]}>{variant?.title}</h1>
             {session?.user.is_vip ? <p className={styles["price"]}>{variant?.price} جنية</p> : null}
-            <h2>{firstAttributeName}</h2>
+            <h2 className={secondryStyles["attribute-name"]}>{firstAttributeName}</h2>
             <div className={secondryStyles["variants-list"]}>
               {firstAttributeVariants.map(v => (
                 <Link
@@ -69,8 +68,8 @@ export default async function ProductPage({params, searchParams}: props) {
                 </Link>
               ))}
             </div>
-            <h2>المميزات</h2>
-            <ul className={styles["product-features"]}>
+            <h2 className={styles["features-title"]}>المميزات</h2>
+            <ul className={styles["features-list"]}>
               {variant?.features.map((f: string) => (
                 <li key={f}>{f}</li>
               ))}
@@ -79,7 +78,7 @@ export default async function ProductPage({params, searchParams}: props) {
         </div>
       </div>
       <div className={styles["product-description"]}>
-        <h2>وصف المنتج</h2>
+        <h2 className={styles["description-title"]}>وصف المنتج</h2>
         <p>{variant?.description}</p>
       </div>
     </section>
