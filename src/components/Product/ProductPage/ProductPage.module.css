@@ -23,7 +23,7 @@
   margin-block-end: 1rem;
 }
 .price {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-500);
   font-weight: var(--font-weight-medium);
   margin-block-end: 2rem;
 }

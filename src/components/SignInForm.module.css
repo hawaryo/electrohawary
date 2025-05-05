@@ -9,7 +9,7 @@
   margin-block-start: 6rem;
 
   .form-label {
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-400);
     font-weight: var(--font-weight-medium);
   }
 
@@ -18,7 +18,7 @@
     border: 2px solid var(--primary-c);
     border-radius: 3px;
     padding: 0.3rem;
-    font-size:var(--font-size-md);
+    font-size:var(--font-size-400);
 
     &:user-invalid{
       border-color: rgb(206, 41, 41);

@@ -32,6 +32,6 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-300);
   margin-block-start: 0.4rem;
 }

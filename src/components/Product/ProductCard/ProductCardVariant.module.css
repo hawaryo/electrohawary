@@ -7,7 +7,7 @@
 .variant-btn {
   width: 30px;
   height: 30px;
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-200);
   color: var(--secondary-c);
   background-color: var(--primary-c);
   border-radius: 2px;

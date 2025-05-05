@@ -5,7 +5,7 @@
   border: 0;
   border-radius: 4px;
   font-family: var(--rubik);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-200);
   font-weight: var(--font-weight-medium);
 }
 .secondary-btn {
@@ -15,6 +15,6 @@
   border: 1px solid var(--primary-c);
   border-radius: 4px;
   font-family: var(--rubik);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-200);
   font-weight: var(--font-weight-medium);
 }
