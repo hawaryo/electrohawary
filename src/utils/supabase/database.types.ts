@@ -64,21 +64,21 @@ export type Database = {
       };
       category: {
         Row: {
-          alt: string | null;
+          alt: string;
           id: number;
           image_url: string;
           name: string;
         };
         Insert: {
-          alt?: string | null;
+          alt?: string;
           id?: number;
-          image_url?: string | null;
+          image_url?: string;
           name: string;
         };
         Update: {
-          alt?: string | null;
+          alt?: string;
           id?: number;
-          image_url?: string | null;
+          image_url?: string;
           name?: string;
         };
         Relationships: [];
