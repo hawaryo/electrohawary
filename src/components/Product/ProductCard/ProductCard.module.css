@@ -3,7 +3,9 @@
   flex-direction: column;
   height: 100%;
   padding: 0.5rem;
-  transition: all 1s ease;
+  border-radius: 2px;
+  outline: 1px solid rgba(0, 0, 0, 0.2);
+  transition: all 500ms linear;
   & h2 {
     font-size: var(--font-size-200);
     margin-block-start: 0.5rem;

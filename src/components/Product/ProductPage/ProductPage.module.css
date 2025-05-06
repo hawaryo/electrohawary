@@ -20,6 +20,8 @@
   height: min(100%, 500px);
 }
 .product-title {
+  max-width: 30ch;
+  text-wrap: pretty;
   margin-block-end: 1rem;
 }
 .features-title {

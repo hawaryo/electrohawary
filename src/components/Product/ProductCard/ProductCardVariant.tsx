@@ -22,8 +22,7 @@ type Props = {
   } | null;
 };
 
-export default function ProductCardWithVariants({ product, session }: Props) {
-  
+export default function ProductCardWithVariants({product, session}: Props) {
   const firstAttributeName = Object.keys(product.attributes)[0];
 
   const firstAttributeVariants = product.attributes[firstAttributeName];
@@ -54,7 +53,6 @@ export default function ProductCardWithVariants({ product, session }: Props) {
     getData();
   }, [VariantDetails.variantId]);
 
- 
   function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
     setVariantDetails({
       ...VariantDetails,
@@ -66,10 +64,9 @@ export default function ProductCardWithVariants({ product, session }: Props) {
   return (
     <div className={styles["product-card"]}>
       <Link
-        href={`/product/${product.id}-${product.product_title.replaceAll(
-          " ",
-          "-"
-        )}?${firstAttributeName}=${VariantDetails.variantValue}`}
+        href={`/product/${product.id}-${product.product_title.replaceAll(" ", "-")}?${firstAttributeName}=${
+          VariantDetails.variantValue
+        }`}
       >
         <img src={VariantData?.product_image.url} alt={VariantData?.product_image.alt} width={300} height={300} />
         <h2>{`${product.product_title} ${VariantDetails.variantValue} ${firstAttributeName} `}</h2>
@@ -79,19 +76,21 @@ export default function ProductCardWithVariants({ product, session }: Props) {
       {/* selectable variant buttons */}
 
       <div className={secondaryStyles["variants-container"]}>
-        <h3>{firstAttributeName}</h3>
-        {firstAttributeVariants.map(v => (
-          <button
-            key={v.variant_id}
-            onClick={handleClick}
-            value={v.variant_id}
-            data-variant-value={v.value}
-            className={`${secondaryStyles["variant-btn"]}
-            ${VariantDetails.variantId === v.variant_id ? secondaryStyles["selected"] : ""}`}
-          >
-            {v.value}
-          </button>
-        ))}
+        <h3 className={secondaryStyles["variants-title"]}>{firstAttributeName}</h3>
+        <div className={secondaryStyles["variants-buttons"]}>
+          {firstAttributeVariants.map(v => (
+            <button
+              key={v.variant_id}
+              onClick={handleClick}
+              value={v.variant_id}
+              data-variant-value={v.value}
+              className={`${secondaryStyles["variant-btn"]}
+              ${VariantDetails.variantId === v.variant_id ? secondaryStyles["selected"] : ""}`}
+            >
+              {v.value}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -1,18 +1,25 @@
-
 .variants-container {
+  margin-block-start: 0.8rem;
+  .variants-title {
+    margin-block-end: 0.5rem;
+  }
+}
+.variants-buttons {
   display: flex;
+  align-items: center;
   gap: 6px;
-  margin-block-start: 12px;
 }
 .variant-btn {
-  border: none;
-  width: 30px;
-  height: 30px;
+  width: 44px;
+  height: 44px;
   font-size: var(--font-size-200);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--rubik);
+  text-align: center;
   color: var(--secondary-c);
   background-color: var(--primary-c);
   border-radius: 2px;
 }
-.selected{
+.selected {
   outline: 3px solid rgb(255, 199, 96);
 }

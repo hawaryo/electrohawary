@@ -3,11 +3,11 @@
   max-width: 1350px;
   padding: 1rem;
   display: grid;
+  gap: 1rem;
   justify-content: center;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 
   @media screen and (min-width: 32.5rem) {
     grid-template-columns: repeat(auto-fill, minmax(214px, 1fr));
-    gap: 0.5rem;
   }
 }

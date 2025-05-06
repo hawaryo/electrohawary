@@ -48,9 +48,10 @@ export default async function ProductPage({params, searchParams}: props) {
             height={700}
             className={styles["product-img"]}
           />
-
           <div className={styles["product-details"]}>
-            <h1 className={styles["product-title"]}>{variant?.title}</h1>
+            <h1 className={styles["product-title"]}>
+              {`${variant?.title} ${firstSearchParamValue} ${firstSearchParamKey}`}
+            </h1>
             {session?.user.is_vip ? <h2 className={styles["price"]}>{variant?.price} جنية</h2> : null}
             <h2 className={secondryStyles["attribute-name"]}>{firstAttributeName}</h2>
             <div className={secondryStyles["variants-list"]}>
