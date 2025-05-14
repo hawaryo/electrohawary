@@ -26,11 +26,11 @@ export default function ProductCardWithVariants({ product, session }: Props) {
   
   const firstAttributeName = Object.keys(product.attributes)[0];
 
-  const firstAttributeVariants = product.attributes[firstAttributeName];
+  const firstAttributeValues = product.attributes[firstAttributeName];
 
-  const firstVariantId = firstAttributeVariants[0].variant_id;
+  const firstVariantId = firstAttributeValues[0].variant_id;
 
-  const firstVariantValue = firstAttributeVariants[0].value;
+  const firstVariantValue = firstAttributeValues[0].value;
 
   const [VariantDetails, setVariantDetails] = useState({
     variantId: firstVariantId,
@@ -79,7 +79,7 @@ export default function ProductCardWithVariants({ product, session }: Props) {
       <div className={secondaryStyles["variants-container"]}>
         <h3 className={secondaryStyles["variants-title"]}>{firstAttributeName}</h3>
         <div className={secondaryStyles["variants-buttons"]}>
-          {firstAttributeVariants.map(v => (
+          {firstAttributeValues.map(v => (
             <button
               key={v.variant_id}
               onClick={handleClick}
