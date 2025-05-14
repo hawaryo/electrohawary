@@ -22,7 +22,8 @@ type Props = {
   } | null;
 };
 
-export default function ProductCardWithVariants({product, session}: Props) {
+export default function ProductCardWithVariants({ product, session }: Props) {
+  
   const firstAttributeName = Object.keys(product.attributes)[0];
 
   const firstAttributeVariants = product.attributes[firstAttributeName];
