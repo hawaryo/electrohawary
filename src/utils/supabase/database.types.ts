@@ -318,7 +318,7 @@ export type Database = {
           [attributeName: string]: string[];
         };
       };
-      get_products_with_variant: {
+      get_products_with_variant_reference: {
         Args: {in_category_name: string};
         Returns: {
           id: number;

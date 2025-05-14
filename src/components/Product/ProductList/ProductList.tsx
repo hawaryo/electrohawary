@@ -15,7 +15,7 @@ export default async function ProductList({CategoryName}: Props) {
   const session = await auth();
 
   //get products from the specified category
-  const {data: products} = await supabase.rpc("get_products_with_variant", {
+  const {data: products} = await supabase.rpc("get_products_with_variant_reference", {
     in_category_name: CategoryName,
   });
 
