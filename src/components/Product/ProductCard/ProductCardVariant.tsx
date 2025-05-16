@@ -54,12 +54,14 @@ export default function ProductCardWithVariants({product, session}: Props) {
     getData();
   }, [variantReference.variantId]);
 
-  // set variant details to the selected variant
-  function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
+  function handleSelect(e: React.ChangeEvent<HTMLSelectElement>) {
+    //get the selected element
+    const selectedOption = e.target.selectedOptions[0];
+
     setVariantReference({
       ...variantReference,
-      variantId: Number(e.currentTarget.value),
-      variantValue: e.currentTarget.dataset.variantValue!,
+      variantId: Number(e.target.value),
+      variantValue: selectedOption.dataset.variantValue!,
     });
   }
 
@@ -75,24 +77,26 @@ export default function ProductCardWithVariants({product, session}: Props) {
         <h2>{`${product.product_title} ${variantReference.variantValue} ${firstAttributeName} `}</h2>
         {session?.user.is_vip ? <p className={styles["price"]}>{VariantData?.price} جنية</p> : null}
       </Link>
-
       {/* selectable variant buttons */}
       <div className={secondaryStyles["variants-container"]}>
         <h3 className={secondaryStyles["variants-title"]}>{firstAttributeName}</h3>
-        <div className={secondaryStyles["variants-buttons"]}>
+        <select
+          value={variantReference.variantId}
+          onChange={handleSelect}
+          className={secondaryStyles["variants-select"]}
+        >
           {firstAttributeValues.map(v => (
-            <button
+            <option
               key={v.variant_id}
-              onClick={handleClick}
               value={v.variant_id}
               data-variant-value={v.value}
-              className={`${secondaryStyles["variant-btn"]}
+              className={`${secondaryStyles["variant-option"]}
               ${variantReference.variantId === v.variant_id ? secondaryStyles["selected"] : ""}`}
             >
               {v.value}
-            </button>
+            </option>
           ))}
-        </div>
+        </select>
       </div>
     </div>
   );
