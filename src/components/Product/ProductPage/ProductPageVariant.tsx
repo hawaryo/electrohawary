@@ -22,6 +22,7 @@ export default async function ProductPage({params, searchParams}: props) {
   const session = await auth();
   const supabase = createClient();
 
+  //get product variant data that matches the search params
   const {data: variant} = await supabase
     .rpc("get_variant_by_attributes", {
       in_product_id: productId,
@@ -30,7 +31,8 @@ export default async function ProductPage({params, searchParams}: props) {
     })
     .single();
 
-  const {data: variantsList} = await supabase.rpc("get_product_variant_attributes", {
+  // get all variants attributes names and values from the product ID to display them in the UI as buttons;
+  const {data: variantsList} = await supabase.rpc("get_product_attributes", {
     in_product_id: productId,
   });
 
@@ -53,6 +55,7 @@ export default async function ProductPage({params, searchParams}: props) {
               {`${variant?.title} ${firstSearchParamValue} ${firstSearchParamKey}`}
             </h1>
             {session?.user.is_vip ? <h2 className={styles["price"]}>{variant?.price} جنية</h2> : null}
+            {/* variant list */}
             <h2 className={secondryStyles["attribute-name"]}>{firstAttributeName}</h2>
             <div className={secondryStyles["variants-list"]}>
               {firstAttributeVariants.map(v => (
@@ -69,6 +72,7 @@ export default async function ProductPage({params, searchParams}: props) {
                 </Link>
               ))}
             </div>
+            {/* features list */}
             <h2 className={styles["features-title"]}>المميزات</h2>
             <ul className={styles["features-list"]}>
               {variant?.features.map((f: string) => (
@@ -78,6 +82,7 @@ export default async function ProductPage({params, searchParams}: props) {
           </div>
         </div>
       </div>
+      {/* product description */}
       <div className={styles["product-description"]}>
         <h2 className={styles["description-title"]}>وصف المنتج</h2>
         <p>{variant?.description}</p>

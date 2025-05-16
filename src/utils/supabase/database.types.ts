@@ -312,7 +312,7 @@ export type Database = {
       never: never;
     };
     Functions: {
-      get_product_variant_attributes: {
+      get_product_attributes: {
         Args: {in_product_id: number};
         Returns: {
           [attributeName: string]: string[];

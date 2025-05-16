@@ -4,7 +4,7 @@ interface Variant {
 }
 
 // the product without variant type
-export interface ProductCardSimple {
+export interface ProductCard {
   id: number;
   product_title: string;
   image_url: string;
@@ -31,4 +31,4 @@ export type ProductVariantDetails = {
   price: number;
 } | null;
 
-export type ProductCard = ProductCardSimple | ProductCardWithVariants;
+export type ProductCard = ProductCard | ProductCardWithVariants;

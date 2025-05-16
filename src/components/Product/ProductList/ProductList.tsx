@@ -1,10 +1,10 @@
-import ProductCardSimple from "../ProductCard/ProductCard";
+import ProductCard from "../ProductCard/ProductCard";
 import ProductCardWithVariants from "../ProductCard/ProductCardVariant";
 import styles from "./ProductList.module.css";
 import {createClient} from "../../../utils/supabase/client";
 import {auth} from "../../../utils/auth/auth";
 import type {
-  ProductCardSimple as ProductCardSimpleType,
+  ProductCard as ProductCardType,
   ProductCardWithVariants as ProductCardWithVariantsType,
 } from "../../../utils/types/ProductCard";
 
@@ -23,9 +23,9 @@ export default async function ProductList({CategoryName}: Props) {
     <section>
       <div className={styles["products-grid"]}>
         {products?.map(p =>
-          /* if the product doesn't have variants */
+          /* if the product doesn't have variants then display ProductCard, otherwise display ProductCardWithVariants*/
           p.attributes === null ? (
-            <ProductCardSimple key={p.id} product={p as ProductCardSimpleType} session={session} />
+            <ProductCard key={p.id} product={p as ProductCardType} session={session} />
           ) : (
             <ProductCardWithVariants key={p.id} product={p as ProductCardWithVariantsType} session={session} />
           )

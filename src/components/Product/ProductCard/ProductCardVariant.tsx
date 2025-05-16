@@ -27,7 +27,7 @@ export default function ProductCardWithVariants({product, session}: Props) {
   const firstAttributeName = Object.keys(product.attributes)[0];
   const firstAttributeValues = product.attributes[firstAttributeName];
 
-  //get the first variant id
+  //get the first variant id and value
   const firstVariantId = firstAttributeValues[0].variant_id;
   const firstVariantValue = firstAttributeValues[0].value;
 
@@ -65,6 +65,7 @@ export default function ProductCardWithVariants({product, session}: Props) {
 
   return (
     <div className={styles["product-card"]}>
+      {/* link to the product page */}
       <Link
         href={`/product/${product.id}-${product.product_title.replaceAll(" ", "-")}?${firstAttributeName}=${
           variantReference.variantValue

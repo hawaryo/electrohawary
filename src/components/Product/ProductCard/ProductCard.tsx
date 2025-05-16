@@ -1,9 +1,9 @@
 import styles from "./ProductCard.module.css";
 import Link from "next/link";
-import type {ProductCardSimple} from "../../../utils/types/ProductCard";
+import type {ProductCard} from "../../../utils/types/ProductCard";
 
 type Props = {
-  product: ProductCardSimple;
+  product: ProductCard;
   session: {
     user: {
       is_vip?: boolean;
@@ -11,8 +11,9 @@ type Props = {
   } | null;
 };
 
-export default function ProductCardSimple({product, session}: Props) {
+export default function ProductCard({ product, session }: Props) {
   return (
+    //link to the product page
     <Link
       href={`/product/${product.id}-${product.product_title.replaceAll(" ", "-")}`}
       className={styles["product-card"]}
