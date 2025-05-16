@@ -4,7 +4,7 @@ import styles from "./ProductList.module.css";
 import {createClient} from "../../../utils/supabase/client";
 import {auth} from "../../../utils/auth/auth";
 import type {
-  ProductCard as ProductCardType,
+  ProductCard as ProductCardBasic,
   ProductCardWithVariants as ProductCardWithVariantsType,
 } from "../../../utils/types/ProductCard";
 
@@ -25,7 +25,7 @@ export default async function ProductList({CategoryName}: Props) {
         {products?.map(p =>
           /* if the product doesn't have variants then display ProductCard, otherwise display ProductCardWithVariants*/
           p.attributes === null ? (
-            <ProductCard key={p.id} product={p as ProductCardType} session={session} />
+            <ProductCard key={p.id} product={p as ProductCardBasic} session={session} />
           ) : (
             <ProductCardWithVariants key={p.id} product={p as ProductCardWithVariantsType} session={session} />
           )

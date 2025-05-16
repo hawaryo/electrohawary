@@ -30,5 +30,3 @@ export type ProductVariantDetails = {
   };
   price: number;
 } | null;
-
-export type ProductCard = ProductCard | ProductCardWithVariants;
