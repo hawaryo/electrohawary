@@ -24,6 +24,10 @@
   font-family: inherit;
   font-size: var(--font-size-300);
   font-weight: var(--font-size-600);
+  &:hover,
+  &:focus {
+    background: var(--background-medium-c);
+  }
   option {
     &:nth-of-type(odd) {
       background: var(--background-medium-c);
