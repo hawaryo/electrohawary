@@ -2,7 +2,7 @@
   display: flex;
   align-items: baseline;
   gap: 0.5rem;
-  border: 2px solid var(--primary-c);
+  border: 1px solid var(--primary-c);
   border-radius: 2px;
   padding-inline: 0.25rem;
   max-width: fit-content;

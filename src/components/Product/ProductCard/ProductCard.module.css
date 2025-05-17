@@ -24,11 +24,10 @@
     font-size: var(--font-size-200);
     font-weight: var(--font-weight-bold);
     width: fit-content;
-    border: 2px solid var(--primary-c);
+    border: 1px solid var(--primary-c);
     border-radius: 2px;
     padding: 3px;
   }
-
   &:hover {
     box-shadow: 10px 5px 5px #e9e5dd;
     outline: 1px solid var(--primary-c);
