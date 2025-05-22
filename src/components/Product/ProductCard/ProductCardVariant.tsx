@@ -1,10 +1,4 @@
 "use client";
-/**
- * @description Displays a product card with the selectable variant buttons for the first variant Attribute.
- * @param {Object} product - The product object containing product and variant details.
- * @param {Object} session -  The user session data, used to determine if the user is signed in.
- * @returns {JSX.Element} A product card with interactive variant selection.
- */
 
 import {createClient} from "../../../utils/supabase/client";
 import styles from "./ProductCard.module.css";
@@ -22,7 +16,7 @@ type Props = {
   } | null;
 };
 
-export default function ProductCardWithVariants({product, session}: Props) {
+export default function ProductCardWithVariants({product, session}: Props): React.ReactElement {
   //get the first attribute details
   const firstAttributeName = Object.keys(product.attributes)[0];
   const firstAttributeValues = product.attributes[firstAttributeName];

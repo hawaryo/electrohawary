@@ -19,10 +19,12 @@
   font-size: var(--font-size-400);
   font-weight: var(--font-weight-medium);
 }
+/* dropdown menu styles */
 .variants-select {
   color: #2940c2;
   padding: 5px;
   border: none;
+  border-radius: 0;
   border-inline-start: 1px solid rgba(0, 0, 0, 0.5);
   background-color: transparent;
   min-width: 48px;
@@ -30,15 +32,37 @@
   font-family: inherit;
   font-size: var(--font-size-300);
   font-weight: var(--font-weight-semibold);
-  &:hover,
-  &:focus {
-    background: var(--background-medium-c);
+  /* apply custom select styles */
+  &,
+  &::picker(select) {
+    appearance: base-select;
+  }
+  /* animate icon styles on open */
+  &::picker-icon {
+    color: var(--primary-c);
+    transition: 1s rotate;
+  }
+  &:open::picker-icon {
+    rotate: 180deg;
   }
   option {
     font-size: var(--font-size-300);
-    font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-medium);
+
     &:nth-of-type(odd) {
       background: var(--background-medium-c);
+    }
+    /* apply custom option styles */
+    padding: 10px;
+    &::checkmark {
+      display: none;
+    }
+    &:hover,
+    &:focus {
+      background: rgb(255, 221, 157);
+    }
+    &:checked {
+      font-weight: var(--font-weight-bold);
     }
   }
 }
