@@ -1,3 +1,8 @@
+.variant-value {
+  color: #2940c2;
+  display: inline-block;
+  margin-inline-start: 5px;
+}
 .variants-container {
   display: flex;
   align-items: baseline;
@@ -15,6 +20,7 @@
   font-weight: var(--font-weight-medium);
 }
 .variants-select {
+  color: #2940c2;
   padding: 5px;
   border: none;
   border-inline-start: 1px solid rgba(0, 0, 0, 0.5);
@@ -23,12 +29,14 @@
   min-height: 42px;
   font-family: inherit;
   font-size: var(--font-size-300);
-  font-weight: var(--font-size-600);
+  font-weight: var(--font-weight-semibold);
   &:hover,
   &:focus {
     background: var(--background-medium-c);
   }
   option {
+    font-size: var(--font-size-300);
+    font-weight: var(--font-weight-semibold);
     &:nth-of-type(odd) {
       background: var(--background-medium-c);
     }

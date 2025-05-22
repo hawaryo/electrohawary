@@ -74,10 +74,13 @@ export default function ProductCardWithVariants({product, session}: Props) {
         }`}
       >
         <img src={VariantData?.product_image.url} alt={VariantData?.product_image.alt} width={300} height={300} />
-        <h2>{`${product.product_title} ${variantReference.variantValue} ${firstAttributeName} `}</h2>
+        <h2>
+          {product.product_title}
+          <span className={secondaryStyles["variant-value"]}>{variantReference.variantValue}</span> {firstAttributeName}
+        </h2>
         {session?.user.is_vip ? <p className={styles["price"]}>{VariantData?.price} جنية</p> : null}
       </Link>
-      {/* selectable variant buttons */}
+      {/* selectable variant dropdown */}
       <div className={secondaryStyles["variants-container"]}>
         <h3 className={secondaryStyles["variants-title"]}>{firstAttributeName}</h3>
         <select
@@ -90,8 +93,7 @@ export default function ProductCardWithVariants({product, session}: Props) {
               key={v.variant_id}
               value={v.variant_id}
               data-variant-value={v.value}
-              className={`${secondaryStyles["variant-option"]}
-              ${variantReference.variantId === v.variant_id ? secondaryStyles["selected"] : ""}`}
+              className={secondaryStyles["variant-option"]}
             >
               {v.value}
             </option>
