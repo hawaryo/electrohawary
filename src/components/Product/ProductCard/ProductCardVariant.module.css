@@ -1,5 +1,5 @@
 .variant-value {
-  color: #2940c2;
+  color: var(--blue-c-100);
   display: inline-block;
   margin-inline-start: 5px;
 }
@@ -21,7 +21,7 @@
 }
 /* dropdown menu styles */
 .variants-select {
-  color: #2940c2;
+  color: var(--blue-c-100);
   padding: 5px;
   border: none;
   border-radius: 0;
@@ -36,16 +36,19 @@
   &,
   &::picker(select) {
     appearance: base-select;
+    max-height: 175px;
+    overflow-y: auto;
   }
-  /* animate icon styles on open */
+  /* animate icon color on open */
   &::picker-icon {
     color: var(--primary-c);
-    transition: 1s rotate;
+    transition: 0.5s;
   }
   &:open::picker-icon {
-    rotate: 180deg;
+    color: var(--blue-c-100);
   }
   option {
+    min-width: 52px;
     font-size: var(--font-size-300);
     font-weight: var(--font-weight-medium);
 
