@@ -60,7 +60,7 @@ export default function ProductCardWithVariants({product, session}: Props): Reac
   }
 
   return (
-    <div className={styles["product-card"]}>
+    <div className={`${styles["product-card"]} ${variantStyles["product-card"]}`}>
       {/* link to the product page */}
       <Link
         href={`/product/${product.id}-${product.product_title.replaceAll(" ", "-")}?${firstAttributeName}=${

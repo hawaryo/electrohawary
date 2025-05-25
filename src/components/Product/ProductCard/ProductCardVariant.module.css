@@ -1,3 +1,6 @@
+.product-card:has(.variants-select:open) {
+  opacity: 0.5;
+}
 .variant-value {
   color: var(--blue-c-100);
   display: inline-block;
