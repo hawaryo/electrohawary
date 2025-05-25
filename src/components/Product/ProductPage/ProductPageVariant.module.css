@@ -12,7 +12,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 44px;
+  padding: 6px;
+  min-width: 44px;
   height: 44px;
   font-size: var(--font-size-200);
   color: var(--secondary-c);
