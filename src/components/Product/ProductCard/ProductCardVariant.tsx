@@ -2,7 +2,7 @@
 
 import {createClient} from "../../../utils/supabase/client";
 import styles from "./ProductCard.module.css";
-import secondaryStyles from "./ProductCardVariant.module.css";
+import variantStyles from "./ProductCardVariant.module.css";
 import type {ProductCardWithVariants, ProductVariantDetails} from "../../../utils/types/ProductCard";
 import React, {useState, useEffect} from "react";
 import Link from "next/link";
@@ -70,24 +70,24 @@ export default function ProductCardWithVariants({product, session}: Props): Reac
         <img src={VariantData?.product_image.url} alt={VariantData?.product_image.alt} width={300} height={300} />
         <h2>
           {product.product_title}
-          <span className={secondaryStyles["variant-value"]}>{variantReference.variantValue}</span> {firstAttributeName}
+          <span className={variantStyles["variant-value"]}>{variantReference.variantValue}</span> {firstAttributeName}
         </h2>
         {session?.user.is_vip ? <p className={styles["price"]}>{VariantData?.price} جنية</p> : null}
       </Link>
       {/* selectable variant dropdown */}
-      <div className={secondaryStyles["variants-container"]}>
-        <h3 className={secondaryStyles["variants-title"]}>{firstAttributeName}</h3>
+      <div className={variantStyles["variants-container"]}>
+        <h3 className={variantStyles["variants-title"]}>{firstAttributeName}</h3>
         <select
           value={variantReference.variantId}
           onChange={handleSelect}
-          className={secondaryStyles["variants-select"]}
+          className={variantStyles["variants-select"]}
         >
           {firstAttributeValues.map(v => (
             <option
               key={v.variant_id}
               value={v.variant_id}
               data-variant-value={v.value}
-              className={secondaryStyles["variant-option"]}
+              className={variantStyles["variant-option"]}
             >
               {v.value}
             </option>
