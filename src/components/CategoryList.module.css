@@ -11,7 +11,7 @@
   border: 2px solid var(--primary-c);
   border-radius: 3px;
   padding: 0.8rem;
-  transition: 200ms ease-out;
+  transition: all 200ms;
   & img {
     display: block;
     width: 100%;
@@ -19,6 +19,7 @@
   }
   &:hover {
     border-color: var(--gold-c-100);
+    padding: 0.4rem;
   }
 }
 .category-grid {
