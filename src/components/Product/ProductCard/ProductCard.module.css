@@ -4,7 +4,7 @@
   height: 100%;
   padding: 0.5rem;
   border-radius: 2px;
-  outline: 1px solid var(--primary-c);
+  outline: 1px solid var(--border-black-light);
   transition: all 500ms linear;
   & h2 {
     font-size: var(--font-size-200);
@@ -12,7 +12,7 @@
     margin-block-end: 0.6rem;
   }
   & img {
-    border: 1px solid var(--primary-c);
+    border: 1px solid var(--border-black-light);
     border-radius: 0.2rem;
     width: 100%;
     height: auto;
@@ -23,11 +23,12 @@
     font-size: var(--font-size-200);
     font-weight: var(--font-weight-bold);
     width: fit-content;
-    border: 1px solid var(--primary-c);
+    border: 1px solid var(--border-black-light);
     border-radius: 2px;
     padding: 3px;
   }
   &:hover {
     box-shadow: 10px 5px 5px #e9e5dd;
+    outline-color: var(---primary-c);
   }
 }
