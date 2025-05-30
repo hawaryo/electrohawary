@@ -28,9 +28,16 @@
   margin-block-end: 0.5rem;
 }
 .features-list {
+  max-width: fit-content;
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.2rem;
+  li {
+    padding: 4px;
+    &:nth-of-type(odd) {
+      background-color: #dfdfdf;
+    }
+  }
 }
 .price {
   font-size: var(--font-size-500);
