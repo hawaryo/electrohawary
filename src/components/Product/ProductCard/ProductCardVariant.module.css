@@ -35,26 +35,39 @@
   font-family: inherit;
   font-size: var(--font-size-300);
   font-weight: var(--font-weight-semibold);
-  /* apply custom select styles */
+  /* enable custom select styles */
   &,
   &::picker(select) {
     appearance: base-select;
+  }
+  &::picker(select) {
+    border: none;
     max-height: 175px;
     overflow-y: auto;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   }
   /* animate icon color on open */
   &::picker-icon {
     color: var(--primary-c);
     transition: 0.5s;
   }
-  &:open::picker-icon {
-    color: var(--blue-c-100);
+  &:open {
+    &::picker-icon {
+      color: var(--blue-c-100);
+    }
   }
   option {
+    border: 1px solid var(--primary-c);
     min-width: 52px;
     font-size: var(--font-size-300);
     font-weight: var(--font-weight-medium);
-
+    /* make first and last option rounded */
+    &:first-of-type {
+      border-radius: 2px 2px 0 0;
+    }
+    &:last-of-type {
+      border-radius: 0 0 2px 2px;
+    }
     &:nth-of-type(odd) {
       background: var(--background-medium-c);
     }
