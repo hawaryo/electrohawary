@@ -6,7 +6,7 @@ export default async function UserAccount() {
   return (
     <section className={styles["main"]}>
       <img
-        src="https://hawaryonline.com/user/user-img-default.avif"
+        src={`${process.env.NEXT_PUBLIC_IMAGE_URL}/user/user-img-default.avif`}
         alt="صورة المستخدم"
         width={300}
         height={300}
