@@ -112,7 +112,7 @@ export default function NavBar() {
         id="navbar-links"
       >
         <li>
-          <Link href="#">التواصل</Link>
+          <Link href="/contact" onClick={() => setClicked(false)}>التواصل</Link>
         </li>
         <li>
           <Link href="#">الفروع</Link>
