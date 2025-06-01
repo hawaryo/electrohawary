@@ -1,57 +1,7 @@
 import styles from "./BrandsSection.module.css";
 import DuplicateImages from "./ui/DuplicateImages";
+import {brandImages} from "../data/brandImages";
 export default function BrandsSection() {
-  const brandImages = [
-    {
-      src: `${process.env.NEXT_PUBLIC_BRAND_IMAGE_BASE_URL}/best-logo.svg`,
-      alt: "best logo",
-      width: 106,
-      height: 41,
-      id: 1,
-    },
-    {
-      src: `${process.env.NEXT_PUBLIC_BRAND_IMAGE_BASE_URL}/genaric-logo.svg`,
-      alt: "genaric logo",
-      width: 165,
-      height: 43,
-      id: 2,
-    },
-    {
-      src: `${process.env.NEXT_PUBLIC_BRAND_IMAGE_BASE_URL}/gold-logo.svg`,
-      alt: "gold logo",
-      width: 108,
-      height: 42,
-      id: 3,
-    },
-    {
-      src: `${process.env.NEXT_PUBLIC_BRAND_IMAGE_BASE_URL}/khxc-logo.svg`,
-      alt: "khxc logo",
-      width: 119,
-      height: 44,
-      id: 4,
-    },
-    {
-      src: `${process.env.NEXT_PUBLIC_BRAND_IMAGE_BASE_URL}/must-logo.svg`,
-      alt: "must logo",
-      width: 143,
-      height: 43,
-      id: 5,
-    },
-    {
-      src: `${process.env.NEXT_PUBLIC_BRAND_IMAGE_BASE_URL}/tbe-logo.svg`,
-      alt: "tbe logo",
-      width: 104,
-      height: 43,
-      id: 6,
-    },
-    {
-      src: `${process.env.NEXT_PUBLIC_BRAND_IMAGE_BASE_URL}/vera-logo.svg`,
-      alt: "vera logo",
-      width: 117,
-      height: 43,
-      id: 7,
-    },
-  ];
   return (
     <section className={styles["brands-section"]}>
       <h2>العلامات التجارية</h2>
