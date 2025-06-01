@@ -72,6 +72,6 @@
 /*keep the contact info section wrapping until 35.7rem for visual consistency*/
 @media screen and (max-width: 35.7rem) {
   .contact-info {
-    max-width: 350px;
+    max-width: 329px;
   }
 }
