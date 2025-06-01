@@ -1,0 +1,77 @@
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+  max-width: fit-content;
+  margin-block-start: 2rem;
+  margin-inline: auto;
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.location-info {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  .location-icon {
+    width: 48px;
+    height: 48px;
+    border: 2px solid var(--primary-c);
+    padding: 5px;
+    box-shadow: 2px 2px 0px 0px black;
+    &:hover {
+      box-shadow: none;
+    }
+  }
+  .address-text {
+    font-size: clamp(1.15rem, calc(3vw * 1.6), 1.6rem);
+    font-weight: var(--font-weight-medium);
+    border: 2px solid var(--border-black-light);
+    padding: 0.2rem;
+  }
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  & svg {
+    box-shadow: 2px 2px 0px 0px black;
+    width: 46px;
+    height: 46px;
+    border: 2px solid var(--primary-c);
+    border-radius: 2px;
+    padding: 4px;
+    &:hover {
+      box-shadow: none;
+    }
+  }
+  & p {
+    font-size: var(--font-size-500);
+    border: 2px solid var(--border-black-light);
+    padding: 0.2rem;
+    border-radius: 2px;
+  }
+  .name {
+    background-color: var(--primary-c);
+    color: var(--secondary-c);
+  }
+}
+
+.phone-wrapper,
+.tel-wrapper {
+  display: flex;
+  gap: 0.3rem;
+}
+/*keep the contact info section wrapping until 35.7rem for visual consistency*/
+@media screen and (max-width: 35.7rem) {
+  .contact-info {
+    max-width: 350px;
+  }
+}
