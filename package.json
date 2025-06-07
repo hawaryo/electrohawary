@@ -12,7 +12,7 @@
   "dependencies": {
     "@auth/supabase-adapter": "^1.9.1",
     "@supabase/ssr": "^0.6.1",
-    "@supabase/supabase-js": "^2.49.9",
+    "@supabase/supabase-js": "^2.50.0",
     "babel-plugin-react-compiler": "^19.1.0-rc.2",
     "next": "^15.3.3",
     "next-auth": "^5.0.0-beta.25",
@@ -23,7 +23,7 @@
     "@eslint/eslintrc": "^3",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
-    "@types/node": "^22.15.29",
+    "@types/node": "^22.15.30",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
@@ -33,6 +33,6 @@
     "eslint-plugin-sonarjs": "^3.0.2",
     "jsdom": "^26.1.0",
     "typescript": "^5.8.3",
-    "vitest": "^3.2.0"
+    "vitest": "^3.2.2"
   }
 }
