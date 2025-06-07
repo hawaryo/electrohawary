@@ -5,14 +5,13 @@ import "../styles/variables.css";
 import "../styles/globals.css";
 import "../styles/utils.css";
 import NavBar from "../components/NavBar";
-
+import Footer from "@/components/footer";
 export const metadata: Metadata = {
   icons: {
     icon: [{url: "/favicon.svg", type: "image/svg+xml"}],
   },
   title: "الكترو الهواري",
-  description:
-    "تسوق الان منتجات الكترونية، إضاءة ليد، خلايا طاقة شميسة و بطاريات",
+  description: "تسوق الان منتجات الكترونية، إضاءة ليد، خلايا طاقة شميسة و بطاريات",
 };
 
 const rubikFont = Rubik({
@@ -31,6 +30,7 @@ export default function RootLayout({
           <NavBar />
         </SessionProvider>
         {children}
+        <Footer />
       </body>
     </html>
   );
