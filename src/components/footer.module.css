@@ -1,5 +1,5 @@
 .footer {
-  margin-block-start: 1rem;
+  margin-block-start: 2rem;
   background-color: var(--background-dark-c);
   color: var(--tertiary-c);
   padding: 3rem 3rem 2rem 3rem;
@@ -52,6 +52,9 @@
     .footer-content {
       justify-content: center;
       gap: 2rem;
+    }
+    .contact-items {
+      font-size: var(--font-size-400);
     }
   }
 }
