@@ -12,6 +12,14 @@ export const metadata: Metadata = {
   },
   title: "الكترو الهواري",
   description: "تسوق الان منتجات الكترونية، إضاءة ليد، خلايا طاقة شميسة و بطاريات",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
 };
 
 const rubikFont = Rubik({
