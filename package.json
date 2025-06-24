@@ -10,13 +10,13 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@auth/supabase-adapter": "^1.9.1",
+    "@auth/supabase-adapter": "^1.10.0",
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.50.0",
     "babel-plugin-react-compiler": "^19.1.0-rc.2",
-    "next": "^15.3.3",
+    "next": "^15.3.4",
     "next-auth": "^5.0.0-beta.25",
-    "posthog-js": "^1.253.3",
+    "posthog-js": "^1.255.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
@@ -24,16 +24,16 @@
     "@eslint/eslintrc": "^3",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
-    "@types/node": "^22.15.30",
+    "@types/node": "^24.0.3",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.3.3",
+    "eslint-config-next": "15.3.4",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react-compiler": "^19.1.0-rc.2",
-    "eslint-plugin-sonarjs": "^3.0.2",
+    "eslint-plugin-sonarjs": "^3.0.3",
     "jsdom": "^26.1.0",
     "typescript": "^5.8.3",
-    "vitest": "^3.2.2"
+    "vitest": "^3.2.4"
   }
 }
